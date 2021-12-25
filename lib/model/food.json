@@ -1,24 +1,18 @@
-[
-  {
-    "food_list": [
-      {
-        "food_id": 1,
-        "name": "Cheese Burger",
-        "food_category": ["food"],
-        "food_tag": ["burger", "cheese", "chicken"],
-        "price": 50,
-        "price_sign": "Tk",
-        "currency": "Taka",
-        "image": "https://www.pngkit.com/png/detail/217-2178359_tex-supreme-chicken-cheese-burger-png.png",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "rating": 4.5
-      }
-    ]
-  },
-  {
-    "category_list": ["food", "drink", "snack", "sauce"]
-  },
-  {
-    "tag_list": ["burger", "cheese", "chicken", "meat", "soft drink"]
-  }
-]
+{
+  "food_list": [
+    {
+      "food_id": 1,
+      "name": "Cheese Burger",
+      "food_category": ["food"],
+      "food_tag": ["burger", "cheese", "chicken"],
+      "price": 50,
+      "price_sign": "Tk",
+      "currency": "Taka",
+      "image": "https://www.pngkit.com/png/detail/217-2178359_tex-supreme-chicken-cheese-burger-png.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "rating": 4.5
+    }
+  ],
+  "category_list": ["food", "drink", "snack", "sauce"],
+  "tag_list": ["burger", "cheese", "chicken", "meat", "soft drink"]
+}
