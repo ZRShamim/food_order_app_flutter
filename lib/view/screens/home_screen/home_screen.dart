@@ -1,7 +1,15 @@
+import 'dart:ui';
+
+import 'package:e_commerce_app/controllers/food_controller.dart';
+import 'package:e_commerce_app/controllers/util_controller.dart';
+import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
+  FoodController foodController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +26,9 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => CartScreen());
+            },
             icon: Icon(
               Icons.shopping_cart_outlined,
               color: black,
@@ -46,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
                 child: Container(
                   height: 60,
-                  color: grey,
+                  color: lightGrey,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10, top: 5, bottom: 5),
                     child: Row(
@@ -59,11 +69,7 @@ class HomeScreen extends StatelessWidget {
                               cursorColor: black,
                               textInputAction: TextInputAction.search,
                               keyboardType: TextInputType.text,
-                              // controller: myController,
-                              onEditingComplete: () {
-                                // loadData('All');
-                                // hideKeyboard();
-                              },
+                              onEditingComplete: () {},
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'Search',
@@ -81,18 +87,105 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
+            SizedBox(
+              height: 50,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: Obx(() => ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: foodController.categoryList.length,
+                    itemBuilder: (_, i) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          foodController.categoryList[i],
+                          style: TextStyle(color: orrange, fontSize: 18),
+                        ),
+                      );
+                    })),
+              ),
+            ),
             Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (_, i) {
-                return Text('Data');
-              }),
-            )
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: .6,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                  ),
+                  itemCount: 30,
+                  itemBuilder: (_, i) {
+                    if (i.isEven) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Stack(
+                            alignment: AlignmentDirectional.topCenter,
+                            children: [
+                              Positioned(
+                                top: 50,
+                                width: 300,
+                                height: 250,
+                                child: Container(
+                                  color: white,
+                                ),
+                              ),
+                              const Positioned(
+                                child: SizedBox(
+                                  height: 125,
+                                  width: 125,
+                                  child: CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                      'https://www.thespruceeats.com/thmb/vJUFf6L4p8y9Cn_1pE9Z7Ua9uok=/3000x2001/filters:fill(auto,1)/indian-style-burger-1957599-hero-01-266103a4bb4e4ee7b5feb4da2d2e99da.jpg',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    } else {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(40),
+                          child: Stack(
+                            alignment: AlignmentDirectional.topCenter,
+                            children: [
+                              Positioned(
+                                top: 50,
+                                width: 300,
+                                height: 250,
+                                child: Container(
+                                  color: white,
+                                ),
+                              ),
+                              const Positioned(
+                                child: SizedBox(
+                                  height: 125,
+                                  width: 125,
+                                  child: CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                      'https://www.thespruceeats.com/thmb/vJUFf6L4p8y9Cn_1pE9Z7Ua9uok=/3000x2001/filters:fill(auto,1)/indian-style-burger-1957599-hero-01-266103a4bb4e4ee7b5feb4da2d2e99da.jpg',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),
-      // bottomNavigationBar: ,
     );
   }
 }

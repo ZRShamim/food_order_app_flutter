@@ -1,0 +1,199 @@
+import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
+import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class AccountScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: bgColor,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'My Profile',
+              style: TextStyle(
+                fontSize: 34,
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Personal details',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  'Change',
+                  style: TextStyle(
+                    color: orrange,
+                    fontSize: 15,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Container(
+                height: 200,
+                color: white,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: Image.network(
+                          'https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png'),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        const Text(
+                          'Thelma Sara-bear',
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                        const Text(
+                          'thelma_sara-bear@gmail.com',
+                          style: TextStyle(
+                            fontSize: 13,
+                          ),
+                        ),
+                        Divider(
+                          color: grey,
+                        ),
+                        const Text(
+                          '+233 54138989',
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                        Divider(
+                          color: grey,
+                        ),
+                        const Text(
+                          'Trasaco hotel, behind navrongo campus',
+                          style: TextStyle(
+                            fontSize: 13,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            ListTile(
+              title: const Text(
+                'Orders',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                color: black,
+                size: 18,
+              ),
+              onTap: () {
+                Get.to(() =>
+                  CartScreen()
+                );
+              },
+              tileColor: white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ListTile(
+              title: const Text(
+                'Payment Method',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                color: black,
+                size: 18,
+              ),
+              tileColor: white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ListTile(
+              title: const Text(
+                'FAQ',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                color: black,
+                size: 18,
+              ),
+              tileColor: white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ListTile(
+              title: const Text(
+                'Help',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                color: black,
+                size: 18,
+              ),
+              tileColor: white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
