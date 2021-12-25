@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Food Order App',
       theme: ThemeData(
+        fontFamily: 'Actor',
         primarySwatch: Colors.blue,
       ),
       home: HomeScreen(),
