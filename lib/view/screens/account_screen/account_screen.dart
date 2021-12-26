@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/view/screens/account_screen/payment_method_screen.dart';
+import 'package:e_commerce_app/view/screens/payment_screen/payment_method_screen.dart';
 import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
