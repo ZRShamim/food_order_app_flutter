@@ -20,7 +20,7 @@
       "price": 79,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20191219-seo-keto-tortilla-chips-delish-ehg-8872-1578952035.jpg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Cheetos%20with%20Coriander%20Sauce.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4
     },
@@ -44,7 +44,7 @@
       "price": 49,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://aubreyskitchen.com/wp-content/uploads/2021/01/frozen-french-fries-in-air-fryer.jpg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/French%20Fries.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 3.5
     },
@@ -56,7 +56,7 @@
       "price": 199,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/6/1/2/FNM_070112-Copy-That-Almost-Famous-Animal-Style-Burger-Recipe_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382541460839.jpeg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Double%20Patty%20Burger.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4.5
     },
@@ -68,7 +68,7 @@
       "price": 149,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://cholokini.net/wp-content/uploads/2021/05/big-crunch-chicken-cheese-burger-500x500-1.jpg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Chicken%20Cheese%20Burger.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4.5
     },
@@ -80,7 +80,7 @@
       "price": 299,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimagesvc.meredithcorp.io%2Fv3%2Fmm%2Fimage%3Furl%3Dhttps%253A%252F%252Fstatic.onecms.io%252Fwp-content%252Fuploads%252Fsites%252F19%252F2014%252F07%252F10%252Fpepperoni-pizza-ck-x.jpg&q=85",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Peperoni%20Pizza.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4.0
     },
@@ -104,7 +104,7 @@
       "price": 399,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://www.pngkit.com/png/detail/217-2178359_tex-supreme-chicken-cheese-burger-png.png",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Cheese%20Pizza.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 5
     },
@@ -116,7 +116,7 @@
       "price": 129,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://www.shugarysweets.com/wp-content/uploads/2015/12/grinch-drinks-1-720x540.jpg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Grinch%20Drink.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4.0
     },
@@ -128,7 +128,7 @@
       "price": 129,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Orrangy%20Blast.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 5
     },
@@ -152,7 +152,7 @@
       "price": 119,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://img.taste.com.au/CMKReV3_/w720-h480-cfill-q80/taste/2020/05/jun20_vietnamese-iced-coffee-161761-1.jpg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Iced%20Coffee.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 3.5
     },
@@ -164,7 +164,7 @@
       "price": 199,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://veenaazmanov.com/wp-content/uploads/2015/06/Frozen-Hot-Chocolate-Drink1.jpg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Chocolate%20Delight%20Drinks.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 5
     },
@@ -176,7 +176,7 @@
       "price": 129,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://images-gmi-pmc.edge-generalmills.com/7c1096c7-bfd0-4806-a794-1d3001fe0063.jpg",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Fudge%20Ice-Cream.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4.0
     },
@@ -188,7 +188,7 @@
       "price": 99,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://www.pngkit.com/png/detail/217-2178359_tex-supreme-chicken-cheese-burger-png.png",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Gelatin%20Dessert.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4.5
     },
