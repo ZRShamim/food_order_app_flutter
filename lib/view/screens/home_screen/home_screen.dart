@@ -3,9 +3,12 @@ import 'dart:ui';
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
+import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'home_widgets/food_card.dart';
 
 class HomeScreen extends StatelessWidget {
   FoodController foodController = Get.find();
@@ -119,101 +122,23 @@ class HomeScreen extends StatelessWidget {
                     itemCount: foodController.foodList.length,
                     itemBuilder: (_, i) {
                       if (i.isEven) {
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50),
-                            child: Stack(
-                              alignment: AlignmentDirectional.topCenter,
-                              children: [
-                                Positioned(
-                                  top: 50,
-                                  width: 300,
-                                  height: 250,
-                                  child: Container(
-                                    color: white,
-                                  ),
-                                ),
-                                Positioned(
-                                  child: SizedBox(
-                                    height: 125,
-                                    width: 125,
-                                    child: CircleAvatar(
-                                      backgroundImage: NetworkImage(
-                                        foodController.foodList[i].image,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: 160,
-                                  child: Text(
-                                    foodController.foodList[i].name,
-                                    style: const TextStyle(fontSize: 22),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: 220,
-                                  child: Text(
-                                    'tk ${foodController.foodList[i].price}',
-                                    style: const TextStyle(
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                        return InkWell(
+                          onTap: () {
+                            Get.to(() => FoodInfo(index: i,));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 20),
+                            child: FoodCard(index: i),
                           ),
                         );
                       } else {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(40),
-                            child: Stack(
-                              alignment: AlignmentDirectional.topCenter,
-                              children: [
-                                Positioned(
-                                  top: 50,
-                                  width: 300,
-                                  height: 250,
-                                  child: Container(
-                                    color: white,
-                                  ),
-                                ),
-                                Positioned(
-                                  child: SizedBox(
-                                    height: 125,
-                                    width: 125,
-                                    child: CircleAvatar(
-                                      backgroundImage: NetworkImage(
-                                        foodController.foodList[i].image,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: 160,
-                                  child: Container(
-                                    width: 150,
-                                    child: Text(
-                                      foodController.foodList[i].name,
-                                      textAlign: TextAlign.center,
-                                      style: const TextStyle(fontSize: 22),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: 220,
-                                  child: Text(
-                                    'tk ${foodController.foodList[i].price}',
-                                    style: const TextStyle(
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                        return InkWell(
+                          onTap: () {
+                            Get.to(() => FoodInfo(index: i,));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: FoodCard(index: i),
                           ),
                         );
                       }
