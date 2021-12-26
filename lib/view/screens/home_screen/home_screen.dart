@@ -145,6 +145,22 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                Positioned(
+                                  top: 160,
+                                  child: Text(
+                                    foodController.foodList[i].name,
+                                    style: const TextStyle(fontSize: 22),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 220,
+                                  child: Text(
+                                    'tk ${foodController.foodList[i].price}',
+                                    style: const TextStyle(
+                                      fontSize: 17,
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -173,6 +189,26 @@ class HomeScreen extends StatelessWidget {
                                       backgroundImage: NetworkImage(
                                         foodController.foodList[i].image,
                                       ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 160,
+                                  child: Container(
+                                    width: 150,
+                                    child: Text(
+                                      foodController.foodList[i].name,
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(fontSize: 22),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 220,
+                                  child: Text(
+                                    'tk ${foodController.foodList[i].price}',
+                                    style: const TextStyle(
+                                      fontSize: 17,
                                     ),
                                   ),
                                 ),
