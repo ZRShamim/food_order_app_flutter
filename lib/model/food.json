@@ -8,7 +8,7 @@
       "price": 119,
       "price_sign": "Tk",
       "currency": "Taka",
-      "image": "https://www.pngkit.com/png/detail/217-2178359_tex-supreme-chicken-cheese-burger-png.png",
+      "image": "https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/assets/food%20images/Cheese%20Burger.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "rating": 4.5
     },
