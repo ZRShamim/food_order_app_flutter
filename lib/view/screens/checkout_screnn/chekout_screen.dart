@@ -1,0 +1,202 @@
+import 'package:e_commerce_app/controllers/util_controller.dart';
+import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
+import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
+import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
+import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class CheckOutScreen extends StatelessWidget {
+  UtilController utilController = Get.find();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: black),
+        elevation: 0,
+        backgroundColor: bgColor,
+        centerTitle: true,
+        title: Text(
+          'Checkout',
+          style: TextStyle(
+            color: black,
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Address Details',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  TextButton(
+                    child: Text(
+                      'Change',
+                      style: TextStyle(
+                        color: red,
+                        fontSize: 15,
+                      ),
+                    ),
+                    onPressed: () {
+                      Get.to(() => AccountScreen());
+                    },
+                  ),
+                ],
+              ),
+              PersonalInfoCard(),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Payment Method',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  TextButton(
+                    child: Text(
+                      'Update information',
+                      style: TextStyle(
+                        color: red,
+                        fontSize: 15,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              PaymentMethodCard(),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                'Delivery Method',
+                style: TextStyle(fontSize: 17),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: Container(
+                  color: white,
+                  child: Obx(
+                    () => Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Radio(
+                                value: 0,
+                                groupValue: utilController
+                                    .activeRadioButtonDelivery.value,
+                                onChanged: (value) {
+                                  utilController
+                                      .changeRadioButtonDeliveryValue(value);
+                                },
+                                activeColor: red,
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text(
+                                'Door Delivery',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Radio(
+                                value: 1,
+                                groupValue: utilController
+                                    .activeRadioButtonDelivery.value,
+                                onChanged: (value) {
+                                  utilController
+                                      .changeRadioButtonDeliveryValue(value);
+                                },
+                                activeColor: red,
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text(
+                                'Pick up',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Total',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                  Text(
+                    'tk 360',
+                    style: TextStyle(fontSize: 26),
+                  ),
+                ],
+              ),
+              Padding(
+              padding: const EdgeInsets.only(top: 15, bottom: 10),
+              child: InkWell(
+                onTap: () {
+                  
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(50),
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 250,
+                    height: 60,
+                    color: red,
+                    child: Text(
+                      'Check Out',
+                      style: TextStyle(
+                        color: white,
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

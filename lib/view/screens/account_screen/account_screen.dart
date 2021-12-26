@@ -4,7 +4,7 @@ import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'account_widget/personal_info_card.dart';
+import '../../global_widgets/personal_info_card.dart';
 
 class AccountScreen extends StatelessWidget {
   @override

@@ -8,7 +8,7 @@ class PersonalInfoCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(30),
       child: Container(
-        height: 200,
+        height: 180,
         color: white,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
