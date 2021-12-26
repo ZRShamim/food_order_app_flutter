@@ -1,12 +1,10 @@
-import 'dart:ui';
-
 import 'package:e_commerce_app/controllers/food_controller.dart';
-import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
 import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shimmer/shimmer.dart';
 
 import 'home_widgets/food_card.dart';
 
@@ -108,44 +106,134 @@ class HomeScreen extends StatelessWidget {
                     })),
               ),
             ),
-            Expanded(
-              child: Obx(
-                () => Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: .6,
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
+            Obx(
+              () => foodController.loading.value
+                  ? Expanded(
+                      child: Shimmer.fromColors(
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              childAspectRatio: .6,
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 10,
+                            ),
+                            itemCount: 6,
+                            itemBuilder: (_, i) {
+                              if (i.isEven) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 20),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(40),
+                                    child: Stack(
+                                      alignment: AlignmentDirectional.topCenter,
+                                      children: [
+                                        Positioned(
+                                          top: 50,
+                                          width: 300,
+                                          height: 250,
+                                          child: Container(
+                                            color: white,
+                                          ),
+                                        ),
+                                        Positioned(
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(100),
+                                            child: Material(
+                                              elevation: 8,
+                                              child: Container(
+                                                height: 125,
+                                                width: 125,
+                                                color: white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              } else {
+                                return Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(40),
+                                    child: Stack(
+                                      alignment: AlignmentDirectional.topCenter,
+                                      children: [
+                                        Positioned(
+                                          top: 50,
+                                          width: 300,
+                                          height: 250,
+                                          child: Container(
+                                            color: white,
+                                          ),
+                                        ),
+                                        Positioned(
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(100),
+                                            child: Container(
+                                              height: 125,
+                                              width: 125,
+                                              color: white,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+                        ),
+                        baseColor: bgColor,
+                        highlightColor: Colors.white,
+                        direction: ShimmerDirection.ltr,
+                      ),
+                    )
+                  : Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: .6,
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10,
+                          ),
+                          itemCount: foodController.foodList.length,
+                          itemBuilder: (_, i) {
+                            if (i.isEven) {
+                              return InkWell(
+                                onTap: () {
+                                  Get.to(() => FoodInfo(
+                                        index: i,
+                                      ));
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 20),
+                                  child: FoodCard(index: i),
+                                ),
+                              );
+                            } else {
+                              return InkWell(
+                                onTap: () {
+                                  Get.to(() => FoodInfo(
+                                        index: i,
+                                      ));
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: FoodCard(index: i),
+                                ),
+                              );
+                            }
+                          },
+                        ),
+                      ),
                     ),
-                    itemCount: foodController.foodList.length,
-                    itemBuilder: (_, i) {
-                      if (i.isEven) {
-                        return InkWell(
-                          onTap: () {
-                            Get.to(() => FoodInfo(index: i,));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 20),
-                            child: FoodCard(index: i),
-                          ),
-                        );
-                      } else {
-                        return InkWell(
-                          onTap: () {
-                            Get.to(() => FoodInfo(index: i,));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: FoodCard(index: i),
-                          ),
-                        );
-                      }
-                    },
-                  ),
-                ),
-              ),
             ),
           ],
         ),
