@@ -106,80 +106,83 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: .6,
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
+              child: Obx(
+                () => Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: .6,
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                    ),
+                    itemCount: foodController.foodList.length,
+                    itemBuilder: (_, i) {
+                      if (i.isEven) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Stack(
+                              alignment: AlignmentDirectional.topCenter,
+                              children: [
+                                Positioned(
+                                  top: 50,
+                                  width: 300,
+                                  height: 250,
+                                  child: Container(
+                                    color: white,
+                                  ),
+                                ),
+                                Positioned(
+                                  child: SizedBox(
+                                    height: 125,
+                                    width: 125,
+                                    child: CircleAvatar(
+                                      backgroundImage: NetworkImage(
+                                        foodController.foodList[i].image,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      } else {
+                        return Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(40),
+                            child: Stack(
+                              alignment: AlignmentDirectional.topCenter,
+                              children: [
+                                Positioned(
+                                  top: 50,
+                                  width: 300,
+                                  height: 250,
+                                  child: Container(
+                                    color: white,
+                                  ),
+                                ),
+                                Positioned(
+                                  child: SizedBox(
+                                    height: 125,
+                                    width: 125,
+                                    child: CircleAvatar(
+                                      backgroundImage: NetworkImage(
+                                        foodController.foodList[i].image,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }
+                    },
                   ),
-                  itemCount: 30,
-                  itemBuilder: (_, i) {
-                    if (i.isEven) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Stack(
-                            alignment: AlignmentDirectional.topCenter,
-                            children: [
-                              Positioned(
-                                top: 50,
-                                width: 300,
-                                height: 250,
-                                child: Container(
-                                  color: white,
-                                ),
-                              ),
-                              const Positioned(
-                                child: SizedBox(
-                                  height: 125,
-                                  width: 125,
-                                  child: CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                      'https://www.thespruceeats.com/thmb/vJUFf6L4p8y9Cn_1pE9Z7Ua9uok=/3000x2001/filters:fill(auto,1)/indian-style-burger-1957599-hero-01-266103a4bb4e4ee7b5feb4da2d2e99da.jpg',
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    } else {
-                      return Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(40),
-                          child: Stack(
-                            alignment: AlignmentDirectional.topCenter,
-                            children: [
-                              Positioned(
-                                top: 50,
-                                width: 300,
-                                height: 250,
-                                child: Container(
-                                  color: white,
-                                ),
-                              ),
-                              const Positioned(
-                                child: SizedBox(
-                                  height: 125,
-                                  width: 125,
-                                  child: CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                      'https://www.thespruceeats.com/thmb/vJUFf6L4p8y9Cn_1pE9Z7Ua9uok=/3000x2001/filters:fill(auto,1)/indian-style-burger-1957599-hero-01-266103a4bb4e4ee7b5feb4da2d2e99da.jpg',
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    }
-                  },
                 ),
               ),
             ),
