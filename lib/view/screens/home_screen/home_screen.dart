@@ -99,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
                           foodController.categoryList[i],
-                          style: TextStyle(color: orrange, fontSize: 18),
+                          style: TextStyle(color: red, fontSize: 18),
                         ),
                       );
                     })),

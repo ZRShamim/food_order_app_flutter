@@ -33,7 +33,7 @@ class LandingScreen extends StatelessWidget {
           currentIndex: utilController.bottomTabbarIndex.value,
           backgroundColor: white,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: orrange,
+          selectedItemColor: red,
           unselectedItemColor: grey,
           items: const [
             BottomNavigationBarItem(
