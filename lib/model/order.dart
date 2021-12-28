@@ -1,15 +1,15 @@
-import 'package:e_commerce_app/model/food.dart';
+import 'package:e_commerce_app/model/cart.dart';
 
 class Order {
   Order({
     required this.id,
     required this.date,
-    required this.orderList,
+    required this.foodList,
     required this.totalAmount,
   });
 
-  var id;
+  String id;
   DateTime date;
-  List<FoodList> orderList;
+  List<Cart> foodList;
   double totalAmount;
 }

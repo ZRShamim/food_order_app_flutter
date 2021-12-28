@@ -1,14 +1,19 @@
+import 'package:e_commerce_app/controllers/cart_controller.dart';
+import 'package:e_commerce_app/controllers/order_controller.dart';
 import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/model/cart.dart';
 import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
 import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
+import 'package:e_commerce_app/view/screens/home_screen/home_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CheckOutScreen extends StatelessWidget {
   UtilController utilController = Get.find();
+  OrderController orderController = Get.find();
+  CartController cartController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -159,19 +164,19 @@ class CheckOutScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Total',
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    Text(
-                      'tk $totalAmount',
-                      style: const TextStyle(fontSize: 26),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Total',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                  Text(
+                    'tk $totalAmount',
+                    style: const TextStyle(fontSize: 26),
+                  ),
+                ],
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 15, bottom: 10),
                 child: InkWell(
@@ -181,19 +186,23 @@ class CheckOutScreen extends StatelessWidget {
                         content: Column(
                           children: [
                             const Text('Ordered Item'),
-                            const SizedBox(height: 5,),
+                            const SizedBox(
+                              height: 5,
+                            ),
                             const Divider(),
                             for (var i = 0; orderedItem.values.length > i; i++)
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                SizedBox(
-                                  width: 150,
-                                  child: Text(orderedItem.values.toList()[i].name)
-                                ), 
-                                Text('x ${orderedItem.values.toList()[i].quantity}')
-                              ],
-                            ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  SizedBox(
+                                      width: 150,
+                                      child: Text(
+                                          orderedItem.values.toList()[i].name)),
+                                  Text(
+                                      'x ${orderedItem.values.toList()[i].quantity}')
+                                ],
+                              ),
                             const Divider(),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -204,13 +213,15 @@ class CheckOutScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                      onConfirm: () {
-                      },
-                      onCancel: () {
-                      },
-                      textConfirm: 'Order Now',
-                      confirmTextColor: black
-                    );
+                        onConfirm: () {
+                          orderController.addOrders(
+                              orderedItem.values.toList(), totalAmount);
+                          cartController.clearCart();
+                          Get.close(3);
+                        },
+                        onCancel: () {},
+                        textConfirm: 'Order Now',
+                        confirmTextColor: black);
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),

@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 class UtilController extends GetxController {
   var bottomTabbarIndex = 0.obs;
-
   var activeRadioButtonPayment = 0.obs;
   var activeRadioButtonDelivery = 0.obs;
 

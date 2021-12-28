@@ -34,6 +34,7 @@ class CartController extends GetxController {
       );
     }
   }
+
   void removeQuantity(String foodId) {
     if (cartItems.containsKey(foodId)) {
       cartItems.update(
@@ -55,5 +56,9 @@ class CartController extends GetxController {
       total += cartItem.price * cartItem.quantity;
     });
     return total;
+  }
+
+  void clearCart() {
+    cartItems.clear();
   }
 }

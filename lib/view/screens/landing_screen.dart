@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/controllers/offers_controller.dart';
+import 'package:e_commerce_app/controllers/order_controller.dart';
 import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
 import 'package:e_commerce_app/view/screens/history_screen/history_screen.dart';
@@ -14,6 +15,7 @@ class LandingScreen extends StatelessWidget {
   UtilController utilController = Get.put(UtilController());
   CartController cartController = Get.put(CartController());
   OfferController offerController = Get.put(OfferController());
+  OrderController orderController = Get.put(OrderController());
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class LandingScreen extends StatelessWidget {
               child: Text('Star'),
             ),
             AccountScreen(),
-            const HistoryScreen(),
+            HistoryScreen(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
