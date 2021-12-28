@@ -139,7 +139,8 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         Positioned(
                                           child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(100),
+                                            borderRadius:
+                                                BorderRadius.circular(100),
                                             child: Material(
                                               elevation: 8,
                                               child: Container(
@@ -172,7 +173,8 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         Positioned(
                                           child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(100),
+                                            borderRadius:
+                                                BorderRadius.circular(100),
                                             child: Container(
                                               height: 125,
                                               width: 125,
@@ -208,9 +210,11 @@ class HomeScreen extends StatelessWidget {
                             if (i.isEven) {
                               return InkWell(
                                 onTap: () {
-                                  Get.to(() => FoodInfo(
-                                        index: i,
-                                      ));
+                                  Get.to(
+                                    () => FoodInfo(
+                                      index: i,
+                                    ),
+                                  );
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(bottom: 20),
@@ -220,9 +224,11 @@ class HomeScreen extends StatelessWidget {
                             } else {
                               return InkWell(
                                 onTap: () {
-                                  Get.to(() => FoodInfo(
-                                        index: i,
-                                      ));
+                                  Get.to(
+                                    () => FoodInfo(
+                                      index: i,
+                                    ),
+                                  );
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 20),

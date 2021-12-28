@@ -1,10 +1,12 @@
+import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FoodInfo extends StatelessWidget {
-  FoodController foodController = Get.put(FoodController());
+  FoodController foodController = Get.find();
+  CartController cartController = Get.put(CartController());
 
   FoodInfo({required this.index});
 
@@ -32,6 +34,7 @@ class FoodInfo extends StatelessWidget {
                       height: 200,
                       width: 200,
                       child: CircleAvatar(
+                        backgroundColor: white,
                         backgroundImage: NetworkImage(
                           foodController.foodList[index].image,
                         ),
@@ -105,24 +108,31 @@ class FoodInfo extends StatelessWidget {
                   style: TextStyle(fontSize: 18, color: grey),
                 ),
               ),
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
               Center(
-                child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 250,
-                        height: 60,
-                        color: red,
-                        child: Text(
-                          'Add to cart',
-                          style: TextStyle(
-                            color: white,
-                            fontSize: 17,
-                          ),
+                child: InkWell(
+                  onTap: () {
+                    // cartController.addToCart(foodController.foodList[index]);
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 250,
+                      height: 60,
+                      color: red,
+                      child: Text(
+                        'Add to cart',
+                        style: TextStyle(
+                          color: white,
+                          fontSize: 17,
                         ),
                       ),
                     ),
+                  ),
+                ),
               )
             ],
           ),

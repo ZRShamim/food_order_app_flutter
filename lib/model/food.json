@@ -1,7 +1,7 @@
 {
   "food_list": [
     {
-      "food_id": 1,
+      "food_id": "1",
       "name": "Cheese Burger",
       "food_category": ["Foods"],
       "food_tag": ["burger", "cheese", "chicken"],
@@ -13,7 +13,7 @@
       "rating": 4.5
     },
     {
-      "food_id": 2,
+      "food_id": "2",
       "name": "Cheetos with Coriander Sauce",
       "food_category": ["Snacks"],
       "food_tag": ["chips", "Sauce"],
@@ -25,7 +25,7 @@
       "rating": 4
     },
     {
-      "food_id": 3,
+      "food_id": "3",
       "name": "Peri Peri French Fries",
       "food_category": ["Snacks"],
       "food_tag": ["Potato", "Chips"],
@@ -37,7 +37,7 @@
       "rating": 4.5
     },
     {
-      "food_id": 4,
+      "food_id": "4",
       "name": "French Fries",
       "food_category": ["Snacks"],
       "food_tag": ["Potato", "Chips"],
@@ -49,7 +49,7 @@
       "rating": 3.5
     },
     {
-      "food_id": 5,
+      "food_id": "5",
       "name": "Double Patty Burger",
       "food_category": ["Foods"],
       "food_tag": ["burger", "meat"],
@@ -61,7 +61,7 @@
       "rating": 4.5
     },
     {
-      "food_id": 6,
+      "food_id": "6",
       "name": "Chicken Cheese Burger",
       "food_category": ["Foods"],
       "food_tag": ["burger", "cheese", "chicken"],
@@ -73,7 +73,7 @@
       "rating": 4.5
     },
     {
-      "food_id": 7,
+      "food_id": "7",
       "name": "Peperoni Pizza",
       "food_category": ["Foods"],
       "food_tag": ["pizza", "spicy"],
@@ -85,7 +85,7 @@
       "rating": 4.0
     },
     {
-      "food_id": 8,
+      "food_id": "8",
       "name": "Spicey Chicken Pizza",
       "food_category": ["Foods"],
       "food_tag": ["pizza", "spicy", "chicken"],
@@ -97,7 +97,7 @@
       "rating": 4.5
     },
     {
-      "food_id": 9,
+      "food_id": "9",
       "name": "Cheese Pizza",
       "food_category": ["Foods"],
       "food_tag": ["Pizaa", "cheese", "chicken"],
@@ -109,7 +109,7 @@
       "rating": 5
     },
     {
-      "food_id": 10,
+      "food_id": "10",
       "name": "Grinch Drink",
       "food_category": ["Drinks"],
       "food_tag": ["icey", "peach"],
@@ -121,7 +121,7 @@
       "rating": 4.0
     },
     {
-      "food_id": 11,
+      "food_id": "11",
       "name": "Orrangy Blast",
       "food_category": ["Drinks"],
       "food_tag": ["orrange", "icey"],
@@ -133,7 +133,7 @@
       "rating": 5
     },
     {
-      "food_id": 12,
+      "food_id": "12",
       "name": "Strawberry Fun Delight",
       "food_category": ["Drinks"],
       "food_tag": ["strawberry"],
@@ -145,7 +145,7 @@
       "rating": 4.0
     },
     {
-      "food_id": 13,
+      "food_id": "13",
       "name": "Iced Coffee",
       "food_category": ["Drinks"],
       "food_tag": ["Coffee", "Icey"],
@@ -157,7 +157,7 @@
       "rating": 3.5
     },
     {
-      "food_id": 14,
+      "food_id": "14",
       "name": "Chocolate Delight Drinks",
       "food_category": ["Drinks"],
       "food_tag": ["Chocolate"],
@@ -169,7 +169,7 @@
       "rating": 5
     },
     {
-      "food_id": 15,
+      "food_id": "15",
       "name": "Fudge Ice-Cream",
       "food_category": ["Desserts"],
       "food_tag": ["Ice-Cream", "Brownie"],
@@ -181,7 +181,7 @@
       "rating": 4.0
     },
     {
-      "food_id": 16,
+      "food_id": "16",
       "name": "Gelatin Dessert",
       "food_category": ["Desserts"],
       "food_tag": ["gelatin"],
@@ -193,7 +193,7 @@
       "rating": 4.5
     },
     {
-      "food_id": 17,
+      "food_id": "17",
       "name": "Pudding with Strawberry Syrup",
       "food_category": ["food"],
       "food_tag": ["strawberry", "syrup"],
