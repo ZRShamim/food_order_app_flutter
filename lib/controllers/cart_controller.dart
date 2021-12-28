@@ -14,8 +14,46 @@ class CartController extends GetxController {
             id: DateTime.now().toString(),
             image: image,
             name: name,
-            price: price);
+            price: price,
+            quantity: 1);
       });
     }
+  }
+
+  void addQuantity(String foodId) {
+    if (cartItems.containsKey(foodId)) {
+      cartItems.update(
+        foodId,
+        (excistingValue) => Cart(
+          id: excistingValue.id,
+          image: excistingValue.image,
+          name: excistingValue.name,
+          price: excistingValue.price,
+          quantity: excistingValue.quantity + 1,
+        ),
+      );
+    }
+  }
+  void removeQuantity(String foodId) {
+    if (cartItems.containsKey(foodId)) {
+      cartItems.update(
+        foodId,
+        (excistingValue) => Cart(
+          id: excistingValue.id,
+          image: excistingValue.image,
+          name: excistingValue.name,
+          price: excistingValue.price,
+          quantity: excistingValue.quantity - 1,
+        ),
+      );
+    }
+  }
+
+  double get totalAmount {
+    var total = 0.0;
+    cartItems.forEach((key, cartItem) {
+      total += cartItem.price * cartItem.quantity;
+    });
+    return total;
   }
 }

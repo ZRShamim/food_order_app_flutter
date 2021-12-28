@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class FoodInfo extends StatelessWidget {
   FoodController foodController = Get.find();
-  CartController cartController = Get.put(CartController());
+  CartController cartController = Get.find();
 
   FoodInfo({required this.index});
 
@@ -14,6 +14,10 @@ class FoodInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String foodId = foodController.foodList[index].foodId;
+    String foodName = foodController.foodList[index].name;
+    String foodImage = foodController.foodList[index].image;
+    double foodPrice = foodController.foodList[index].price;
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
@@ -36,7 +40,7 @@ class FoodInfo extends StatelessWidget {
                       child: CircleAvatar(
                         backgroundColor: white,
                         backgroundImage: NetworkImage(
-                          foodController.foodList[index].image,
+                          foodImage,
                         ),
                       ),
                     ),
@@ -46,7 +50,7 @@ class FoodInfo extends StatelessWidget {
                     SizedBox(
                       width: 350,
                       child: Text(
-                        foodController.foodList[index].name,
+                        foodName,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontSize: 28,
@@ -59,7 +63,7 @@ class FoodInfo extends StatelessWidget {
                     SizedBox(
                       width: 250,
                       child: Text(
-                        'tk ${foodController.foodList[index].price}',
+                        'tk $foodPrice',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 22,
@@ -114,7 +118,7 @@ class FoodInfo extends StatelessWidget {
               Center(
                 child: InkWell(
                   onTap: () {
-                    // cartController.addToCart(foodController.foodList[index]);
+                    cartController.addToCart(foodId, foodName, foodPrice, foodImage);
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),

@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/view/screens/offer%20screen/offer_screen.dart';
 import 'package:e_commerce_app/view/screens/payment_screen/payment_method_screen.dart';
 import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
@@ -57,7 +58,7 @@ class AccountScreen extends StatelessWidget {
               ),
               ListTile(
                 title: const Text(
-                  'Orders',
+                  'Offers',
                   style: TextStyle(
                     fontSize: 18,
                   ),
@@ -68,7 +69,7 @@ class AccountScreen extends StatelessWidget {
                   size: 18,
                 ),
                 onTap: () {
-                  Get.to(() => CartScreen());
+                  Get.to(() => OfferScreen());
                 },
                 tileColor: white,
                 shape: RoundedRectangleBorder(

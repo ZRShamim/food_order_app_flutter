@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/controllers/util_controller.dart';
+import 'package:e_commerce_app/model/cart.dart';
 import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
 import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
@@ -11,6 +12,8 @@ class CheckOutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double totalAmount = Get.arguments['totalAmount'];
+    Map<String, Cart> orderedItem = Get.arguments['orderedItem'];
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
@@ -156,43 +159,77 @@ class CheckOutScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'Total',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  Text(
-                    'tk 360',
-                    style: TextStyle(fontSize: 26),
-                  ),
-                ],
-              ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Total',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    Text(
+                      'tk $totalAmount',
+                      style: const TextStyle(fontSize: 26),
+                    ),
+                  ],
+                ),
               Padding(
-              padding: const EdgeInsets.only(top: 15, bottom: 10),
-              child: InkWell(
-                onTap: () {
-                  
-                },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 250,
-                    height: 60,
-                    color: red,
-                    child: Text(
-                      'Check Out',
-                      style: TextStyle(
-                        color: white,
-                        fontSize: 17,
+                padding: const EdgeInsets.only(top: 15, bottom: 10),
+                child: InkWell(
+                  onTap: () {
+                    Get.defaultDialog(
+                        title: 'Please Note',
+                        content: Column(
+                          children: [
+                            const Text('Ordered Item'),
+                            const SizedBox(height: 5,),
+                            const Divider(),
+                            for (var i = 0; orderedItem.values.length > i; i++)
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                SizedBox(
+                                  width: 150,
+                                  child: Text(orderedItem.values.toList()[i].name)
+                                ), 
+                                Text('x ${orderedItem.values.toList()[i].quantity}')
+                              ],
+                            ),
+                            const Divider(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                const Text('Total Price'),
+                                Text('tk $totalAmount'),
+                              ],
+                            ),
+                          ],
+                        ),
+                      onConfirm: () {
+                      },
+                      onCancel: () {
+                      },
+                      textConfirm: 'Order Now',
+                      confirmTextColor: black
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 250,
+                      height: 60,
+                      color: red,
+                      child: Text(
+                        'Check Out',
+                        style: TextStyle(
+                          color: white,
+                          fontSize: 17,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
             ],
           ),
         ),
