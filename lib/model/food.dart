@@ -46,7 +46,7 @@ class FoodList {
       required  this.rating,
     });
 
-    int foodId;
+    String foodId;
     String name;
     List<String> foodCategory;
     List<String> foodTag;
