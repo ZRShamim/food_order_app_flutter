@@ -206,5 +206,35 @@
     }
   ],
   "category_list": ["Foods", "Drinks", "Snacks", "Desserts"],
-  "tag_list": ["Burger", "Cheese", "Chicken", "Meat", "Soft Drink"]
+  "tag_list": ["Burger", "Cheese", "Chicken", "Meat", "Soft Drink"],
+  "offers": [
+    {
+      "offerId": "offer-01",
+      "offerText": "50 taka off for purchasing more than 300 taka food",
+      "offerAmount": 50.0,
+      "active": true,
+      "offeredCategory": ["All"]
+    },
+    {
+      "offerId": "offer-02",
+      "offerText": "100 taka off for purchasing more than 700 taka food",
+      "offerAmount": 100.0,
+      "active": true,
+      "offeredCategory": ["All"]
+    },
+    {
+      "offerId": "offer-03",
+      "offerText": "10% of in all types of drinks",
+      "offerAmount": 10.0,
+      "active": false,
+      "offeredCategory": ["Drinks"]
+    },
+    {
+      "offerId": "offer-03",
+      "offerText": "15% of in all types of desserts",
+      "offerAmount": 15.0,
+      "active": false,
+      "offeredCategory": ["Desserts"]
+    }
+  ]
 }
