@@ -6,16 +6,17 @@ class FoodController extends GetxController {
   var foodList = <FoodList>[].obs;
   var categoryList = <String>[].obs;
   var tagList = <String>[].obs;
+  // var favFoodList = <FoodList>[].obs;
 
   var loading = true.obs;
 
   @override
   void onInit() {
-    fetchProduct();
+    fetchFoodList();
     super.onInit();
   }
 
-  void fetchProduct() async {
+  Future<void> fetchFoodList() async {
     loading(true);
     try {
       var foodInfo = await ApiService.fetchFoodInfo();
@@ -27,5 +28,14 @@ class FoodController extends GetxController {
     } finally {
       loading(false);
     }
+  }
+
+  List<FoodList> get favoriteFood {
+    return foodList.where((food) => food.isFav == true).toList();
+  }
+
+  void toggleFavFood(FoodList food) {
+    food.isFav = !food.isFav;
+    update();
   }
 }

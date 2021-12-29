@@ -1,5 +1,8 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
+import 'package:e_commerce_app/model/food.dart';
+import 'package:e_commerce_app/view/screens/home_screen/home_screen.dart';
+import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,22 +11,38 @@ class FoodInfo extends StatelessWidget {
   FoodController foodController = Get.find();
   CartController cartController = Get.find();
 
-  FoodInfo({required this.index});
+  FoodInfo({required this.food});
 
-  int index;
+  FoodList food;
 
   @override
   Widget build(BuildContext context) {
-    String foodId = foodController.foodList[index].foodId;
-    String foodName = foodController.foodList[index].name;
-    String foodImage = foodController.foodList[index].image;
-    double foodPrice = foodController.foodList[index].price;
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
         iconTheme: IconThemeData(color: black),
         elevation: 0,
         backgroundColor: bgColor,
+        leading: IconButton(
+          onPressed: () {
+            Get.off(() => LandingScreen());
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
+        actions: [
+          GetBuilder<FoodController>(
+            builder: (_) {
+              return IconButton(
+                onPressed: () {
+                  return foodController.toggleFavFood(food);
+                },
+                icon: Icon(
+                  food.isFav ? Icons.favorite : Icons.favorite_outline,
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -40,7 +59,7 @@ class FoodInfo extends StatelessWidget {
                       child: CircleAvatar(
                         backgroundColor: white,
                         backgroundImage: NetworkImage(
-                          foodImage,
+                          food.image,
                         ),
                       ),
                     ),
@@ -50,7 +69,7 @@ class FoodInfo extends StatelessWidget {
                     SizedBox(
                       width: 350,
                       child: Text(
-                        foodName,
+                        food.name,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontSize: 28,
@@ -63,7 +82,7 @@ class FoodInfo extends StatelessWidget {
                     SizedBox(
                       width: 250,
                       child: Text(
-                        'tk $foodPrice',
+                        'tk ${food.price}',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 22,
@@ -118,7 +137,8 @@ class FoodInfo extends StatelessWidget {
               Center(
                 child: InkWell(
                   onTap: () {
-                    cartController.addToCart(foodId, foodName, foodPrice, foodImage);
+                    cartController.addToCart(
+                        food.foodId, food.name, food.price, food.image);
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),

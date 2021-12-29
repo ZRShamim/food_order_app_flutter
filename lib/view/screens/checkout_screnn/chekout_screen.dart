@@ -6,6 +6,7 @@ import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
 import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
 import 'package:e_commerce_app/view/screens/home_screen/home_screen.dart';
+import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -217,7 +218,7 @@ class CheckOutScreen extends StatelessWidget {
                           orderController.addOrders(
                               orderedItem.values.toList(), totalAmount);
                           cartController.clearCart();
-                          Get.close(3);
+                          Get.offAll(LandingScreen());
                         },
                         onCancel: () {},
                         textConfirm: 'Order Now',

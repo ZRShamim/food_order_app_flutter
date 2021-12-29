@@ -1,6 +1,7 @@
 // To parse this JSON data, do
 //
 //     final food = foodFromJson(jsonString);
+import 'package:get/get.dart';
 
 import 'dart:convert';
 
@@ -49,6 +50,7 @@ class FoodList {
     required this.image,
     required this.description,
     required this.rating,
+    this.isFav = false,
   });
 
   String foodId;
@@ -61,6 +63,7 @@ class FoodList {
   String image;
   String description;
   double rating;
+  bool isFav;
 
   factory FoodList.fromJson(Map<String, dynamic> json) => FoodList(
         foodId: json["food_id"],

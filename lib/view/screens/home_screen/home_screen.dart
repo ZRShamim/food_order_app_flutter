@@ -88,24 +88,37 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            SizedBox(
-              height: 50,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child: Obx(() => ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: foodController.categoryList.length,
-                    itemBuilder: (_, i) {
-                      return Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Text(
-                          foodController.categoryList[i],
-                          style: TextStyle(color: red, fontSize: 18),
-                        ),
-                      );
-                    })),
+            Row(children: [
+              IconButton(
+                onPressed: foodController.fetchFoodList,
+                icon: const Icon(
+                  Icons.refresh,
+                ),
               ),
-            ),
+              Expanded(
+                child: SizedBox(
+                  height: 20,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Obx(
+                      () => ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: foodController.categoryList.length,
+                        itemBuilder: (_, i) {
+                          return Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text(
+                              foodController.categoryList[i],
+                              style: TextStyle(color: red, fontSize: 18),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ]),
             Obx(
               () => foodController.loading.value
                   ? Expanded(
@@ -212,13 +225,13 @@ class HomeScreen extends StatelessWidget {
                                 onTap: () {
                                   Get.to(
                                     () => FoodInfo(
-                                      index: i,
+                                      food: foodController.foodList[i],
                                     ),
                                   );
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(bottom: 20),
-                                  child: FoodCard(index: i),
+                                  child: FoodCard(food: foodController.foodList[i],),
                                 ),
                               );
                             } else {
@@ -226,13 +239,13 @@ class HomeScreen extends StatelessWidget {
                                 onTap: () {
                                   Get.to(
                                     () => FoodInfo(
-                                      index: i,
+                                      food: foodController.foodList[i],
                                     ),
                                   );
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 20),
-                                  child: FoodCard(index: i),
+                                  child: FoodCard(food: foodController.foodList[i]),
                                 ),
                               );
                             }

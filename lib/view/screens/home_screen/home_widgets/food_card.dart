@@ -1,13 +1,15 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
+import 'package:e_commerce_app/model/food.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FoodCard extends StatelessWidget {
   FoodController foodController = Get.find();
-  FoodCard({required this.index});
+  FoodCard({required this.food});
 
-  final int index;
+  // final int index;
+  final FoodList food;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class FoodCard extends StatelessWidget {
               width: 125,
               child: CircleAvatar(
                 backgroundImage: NetworkImage(
-                  foodController.foodList[index].image,
+                  food.image,
                 ),
               ),
             ),
@@ -40,7 +42,7 @@ class FoodCard extends StatelessWidget {
             child: SizedBox(
               width: 150,
               child: Text(
-                foodController.foodList[index].name,
+                food.name,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 22,
@@ -51,7 +53,7 @@ class FoodCard extends StatelessWidget {
           Positioned(
             top: 220,
             child: Text(
-              'tk ${foodController.foodList[index].price}',
+              'tk ${food.price}',
               style: TextStyle(fontSize: 17, color: red),
             ),
           ),
