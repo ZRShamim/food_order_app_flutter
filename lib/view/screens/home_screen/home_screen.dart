@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 
-import 'home_widgets/food_card.dart';
+import '../../global_widgets/food_card.dart';
 
 class HomeScreen extends StatelessWidget {
   FoodController foodController = Get.find();

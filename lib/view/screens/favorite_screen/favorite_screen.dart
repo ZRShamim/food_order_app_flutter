@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
-import 'package:e_commerce_app/view/screens/home_screen/home_widgets/food_card.dart';
+import 'package:e_commerce_app/view/global_widgets/food_card.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
