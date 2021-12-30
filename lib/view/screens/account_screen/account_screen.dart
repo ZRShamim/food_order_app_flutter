@@ -1,11 +1,11 @@
 import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
+import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/offer%20screen/offer_screen.dart';
 import 'package:e_commerce_app/view/screens/payment_screen/payment_method_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../global_widgets/personal_info_card.dart';
 
 class AccountScreen extends StatelessWidget {
   @override

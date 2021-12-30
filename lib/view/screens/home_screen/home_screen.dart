@@ -1,12 +1,14 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
+import 'package:e_commerce_app/view/global_widgets/custom_drawer.dart';
+import 'package:e_commerce_app/view/global_widgets/food_card.dart';
 import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../global_widgets/food_card.dart';
+
 
 class HomeScreen extends StatelessWidget {
   FoodController foodController = Get.find();
@@ -16,6 +18,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: CustomAppbar(),
+      drawer: CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, top: 20),
         child: Column(
@@ -210,7 +213,9 @@ class HomeScreen extends StatelessWidget {
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(bottom: 20),
-                                  child: FoodCard(food: foodController.foodList[i],),
+                                  child: FoodCard(
+                                    food: foodController.foodList[i],
+                                  ),
                                 ),
                               );
                             } else {
@@ -224,7 +229,8 @@ class HomeScreen extends StatelessWidget {
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 20),
-                                  child: FoodCard(food: foodController.foodList[i]),
+                                  child: FoodCard(
+                                      food: foodController.foodList[i]),
                                 ),
                               );
                             }
