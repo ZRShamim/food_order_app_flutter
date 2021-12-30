@@ -218,7 +218,7 @@ class CheckOutScreen extends StatelessWidget {
                           orderController.addOrders(
                               orderedItem.values.toList(), totalAmount);
                           cartController.clearCart();
-                          Get.offAll(LandingScreen());
+                          Get.offAll(() => LandingScreen());
                         },
                         onCancel: () {},
                         textConfirm: 'Order Now',
