@@ -1,6 +1,6 @@
+import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
 import 'package:e_commerce_app/view/screens/offer%20screen/offer_screen.dart';
 import 'package:e_commerce_app/view/screens/payment_screen/payment_method_screen.dart';
-import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,10 +12,7 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: bgColor,
-      ),
+      appBar: CustomAppbar(),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
         child: SingleChildScrollView(

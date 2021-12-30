@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/model/cart.dart';
-import 'package:e_commerce_app/model/food.dart';
+import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:get/get.dart';
 
 class CartController extends GetxController {
@@ -7,7 +7,10 @@ class CartController extends GetxController {
 
   void addToCart(String foodId, String name, double price, String image) {
     if (cartItems.containsKey(foodId)) {
-      print('Added Previously');
+      Get.snackbar('Already Added', 'Go to cart page to confirm your order',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: black.withOpacity(0.75),
+          colorText: white);
     } else {
       cartItems.putIfAbsent(foodId, () {
         return Cart(

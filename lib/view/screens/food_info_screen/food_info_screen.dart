@@ -25,9 +25,9 @@ class FoodInfo extends StatelessWidget {
         backgroundColor: bgColor,
         leading: IconButton(
           onPressed: () {
-            Get.off(() => LandingScreen());
+            Get.offAll(() => LandingScreen());
           },
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
         actions: [
           GetBuilder<FoodController>(
@@ -108,7 +108,7 @@ class FoodInfo extends StatelessWidget {
               SizedBox(
                 width: 320,
                 child: Text(
-                  'Delivered between monday aug and thursday 20 from 8pm to 91:32 pm',
+                  'Delivered between monday aug and thursday 20 from 8pm to 09:32 pm',
                   style: TextStyle(fontSize: 18, color: grey),
                 ),
               ),

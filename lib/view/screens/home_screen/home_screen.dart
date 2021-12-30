@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
-import 'package:e_commerce_app/view/screens/cart_screen/cart_screen.dart';
+import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
 import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
@@ -15,28 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: bgColor,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.notes_outlined,
-            color: black,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Get.to(() => CartScreen());
-            },
-            icon: Icon(
-              Icons.shopping_cart_outlined,
-              color: black,
-            ),
-          ),
-        ],
-      ),
+      appBar: CustomAppbar(),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, top: 20),
         child: Column(

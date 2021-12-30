@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
+import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
 import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
 import 'package:e_commerce_app/view/global_widgets/food_card.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
@@ -12,10 +13,7 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      appBar: AppBar(
-        backgroundColor: bgColor,
-        elevation: 0,
-      ),
+      appBar: CustomAppbar(),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
         child: Column(
