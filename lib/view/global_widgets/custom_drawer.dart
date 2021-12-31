@@ -52,9 +52,22 @@ class CustomDrawer extends StatelessWidget {
               title: 'Security',
               icon: Icons.security_outlined,
             ),
-            Divider(
-              color: white,
-            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.25),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: [
+                  Text('Sign-Out', 
+                    style: TextStyle(
+                      color: white,
+                      fontSize: 20
+                    ),
+                  ),
+                  const SizedBox(width: 10,),
+                  Icon(Icons.arrow_forward, color: white,),
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -86,7 +99,9 @@ class DrawerTile extends StatelessWidget {
       ),
       trailing: IconButton(
         onPressed: () {
-          Get.to(routePAth);
+          if(routePAth != null){
+            Get.to(routePAth);
+          }
         },
         icon: Icon(
           Icons.arrow_forward_ios,

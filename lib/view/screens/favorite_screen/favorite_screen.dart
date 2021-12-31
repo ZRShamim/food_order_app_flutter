@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
+import 'package:e_commerce_app/view/global_widgets/grid_layout.dart';
 import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
 import 'package:e_commerce_app/view/global_widgets/food_card.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
@@ -29,55 +30,23 @@ class FavoriteScreen extends StatelessWidget {
               height: 30,
             ),
             Expanded(
-              child: foodController.favoriteFood.isEmpty? Center(
-                child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text('ohh snap!  No Favorites Yet', style: TextStyle(fontSize: 28,),),
-                ],
-              ),
-              ) : Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: .6,
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                  ),
-                  itemCount: foodController.favoriteFood.length,
-                  itemBuilder: (_, i) {
-                    if (i.isEven) {
-                      return InkWell(
-                        onTap: () {
-                          Get.to(
-                            () => FoodInfo(
-                              food: foodController.favoriteFood[i],
+              child: foodController.favoriteFood.isEmpty
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            'ohh snap!  No Favorites Yet',
+                            style: TextStyle(
+                              fontSize: 28,
                             ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: FoodCard(food: foodController.favoriteFood[i],),
-                        ),
-                      );
-                    } else {
-                      return InkWell(
-                        onTap: () {
-                          Get.to(
-                            () => FoodInfo(
-                              food: foodController.favoriteFood[i],
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: FoodCard(food: foodController.favoriteFood[i]),
-                        ),
-                      );
-                    }
-                  },
-                ),
-              ),
+                          ),
+                        ],
+                      ),
+                    )
+                  : GridLayout(
+                      foodList: foodController.favoriteFood,
+                    ),
             ),
           ],
         ),
