@@ -9,6 +9,7 @@ class PersonalInfoCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(30),
       child: Container(
         height: 180,
+        width: double.infinity,
         color: white,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

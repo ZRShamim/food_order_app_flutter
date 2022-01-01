@@ -1,7 +1,6 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/model/food.dart';
-import 'package:e_commerce_app/view/screens/home_screen/home_screen.dart';
 import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';

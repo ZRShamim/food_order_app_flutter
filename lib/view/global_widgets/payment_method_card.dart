@@ -1,14 +1,17 @@
-import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PaymentMethodCard extends StatelessWidget {
-  
-  UtilController utilController = Get.find();
-
   @override
   Widget build(BuildContext context) {
+
+    var activeRadioButtonPayment = 0.obs;
+
+    void changeRadioButtonPaymentValue(var value) {
+      activeRadioButtonPayment.value = value;
+    }
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(30),
       child: Container(
@@ -22,9 +25,9 @@ class PaymentMethodCard extends StatelessWidget {
                   children: [
                     Radio(
                       value: 0,
-                      groupValue: utilController.activeRadioButtonPayment.value,
+                      groupValue: activeRadioButtonPayment.value,
                       onChanged: (value) {
-                        utilController.changeRadioButtonPaymentValue(value);
+                        changeRadioButtonPaymentValue(value);
                       },
                       activeColor: red,
                     ),
@@ -58,9 +61,9 @@ class PaymentMethodCard extends StatelessWidget {
                   children: [
                     Radio(
                       value: 1,
-                      groupValue: utilController.activeRadioButtonPayment.value,
+                      groupValue: activeRadioButtonPayment.value,
                       onChanged: (value) {
-                        utilController.changeRadioButtonPaymentValue(value);
+                        changeRadioButtonPaymentValue(value);
                       },
                       activeColor: red,
                     ),
@@ -94,9 +97,9 @@ class PaymentMethodCard extends StatelessWidget {
                   children: [
                     Radio(
                       value: 2,
-                      groupValue: utilController.activeRadioButtonPayment.value,
+                      groupValue: activeRadioButtonPayment.value,
                       onChanged: (value) {
-                        utilController.changeRadioButtonPaymentValue(value);
+                        changeRadioButtonPaymentValue(value);
                       },
                       activeColor: red,
                     ),

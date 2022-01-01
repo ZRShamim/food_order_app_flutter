@@ -1,9 +1,7 @@
-import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
 import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
 

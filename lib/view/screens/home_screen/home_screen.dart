@@ -1,14 +1,11 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
 import 'package:e_commerce_app/view/global_widgets/custom_drawer.dart';
-import 'package:e_commerce_app/view/global_widgets/food_card.dart';
 import 'package:e_commerce_app/view/global_widgets/grid_layout.dart';
 import 'package:e_commerce_app/view/global_widgets/shimmer_tile.dart';
-import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatelessWidget {
   FoodController foodController = Get.find();
@@ -121,7 +118,9 @@ class HomeScreen extends StatelessWidget {
                       child: ShimmerTile(),
                     )
                   : Expanded(
-                      child: GridLayout(foodList: foodController.foodList,),
+                      child: GridLayout(
+                        foodList: foodController.foodList,
+                      ),
                     ),
             ),
           ],

@@ -13,17 +13,22 @@ import 'package:get/get.dart';
 
 class LandingScreen extends StatelessWidget {
   FoodController foodController = Get.put(FoodController());
-  UtilController utilController = Get.put(UtilController());
   CartController cartController = Get.put(CartController());
   OfferController offerController = Get.put(OfferController());
   OrderController orderController = Get.put(OrderController());
 
   @override
   Widget build(BuildContext context) {
+    var bottomTabbarIndex = 0.obs;
+
+    void changeTabIndex(int index) {
+      bottomTabbarIndex.value = index;
+    }
+
     return Obx(
       () => Scaffold(
         body: IndexedStack(
-          index: utilController.bottomTabbarIndex.value,
+          index: bottomTabbarIndex.value,
           children: [
             HomeScreen(),
             FavoriteScreen(),
@@ -35,8 +40,8 @@ class LandingScreen extends StatelessWidget {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
-          onTap: utilController.changeTabIndex,
-          currentIndex: utilController.bottomTabbarIndex.value,
+          onTap: changeTabIndex,
+          currentIndex: bottomTabbarIndex.value,
           backgroundColor: white,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: red,

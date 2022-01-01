@@ -1,23 +1,26 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/order_controller.dart';
-import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/model/cart.dart';
 import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
 import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
-import 'package:e_commerce_app/view/screens/home_screen/home_screen.dart';
 import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CheckOutScreen extends StatelessWidget {
-  UtilController utilController = Get.find();
   OrderController orderController = Get.find();
   CartController cartController = Get.find();
 
   @override
   Widget build(BuildContext context) {
+    var activeRadioButtonDelivery = 0.obs;
+
+    void changeRadioButtonDeliveryValue(var value) {
+      activeRadioButtonDelivery.value = value;
+    }
+
     double totalAmount = Get.arguments['totalAmount'];
     Map<String, Cart> orderedItem = Get.arguments['orderedItem'];
     return Scaffold(
@@ -111,11 +114,9 @@ class CheckOutScreen extends StatelessWidget {
                             children: [
                               Radio(
                                 value: 0,
-                                groupValue: utilController
-                                    .activeRadioButtonDelivery.value,
+                                groupValue: activeRadioButtonDelivery.value,
                                 onChanged: (value) {
-                                  utilController
-                                      .changeRadioButtonDeliveryValue(value);
+                                  changeRadioButtonDeliveryValue(value);
                                 },
                                 activeColor: red,
                               ),
@@ -137,11 +138,9 @@ class CheckOutScreen extends StatelessWidget {
                             children: [
                               Radio(
                                 value: 1,
-                                groupValue: utilController
-                                    .activeRadioButtonDelivery.value,
+                                groupValue: activeRadioButtonDelivery.value,
                                 onChanged: (value) {
-                                  utilController
-                                      .changeRadioButtonDeliveryValue(value);
+                                  changeRadioButtonDeliveryValue(value);
                                 },
                                 activeColor: red,
                               ),

@@ -14,7 +14,7 @@ class GridLayout extends StatelessWidget {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: .6,
-        crossAxisCount: 2,
+        crossAxisCount:  2,
         crossAxisSpacing: 10,
       ),
       itemCount: foodList.length,
