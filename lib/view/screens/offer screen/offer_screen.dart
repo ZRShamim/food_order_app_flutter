@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OfferScreen extends StatelessWidget {
-  OfferController offerController = Get.find();
+  OfferController offerController = Get.put(OfferController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class OfferScreen extends StatelessWidget {
                   Text(' please check again.', style: TextStyle(fontSize: 17, color: grey),),
                 ],
               ),
-            ) : Text('data') 
+            ) : const Text('data') 
           ],
         ),
       ),

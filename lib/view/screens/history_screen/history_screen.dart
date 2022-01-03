@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:e_commerce_app/controllers/order_controller.dart';
 import 'package:e_commerce_app/model/order.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
@@ -8,7 +7,8 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class HistoryScreen extends StatelessWidget {
-  OrderController orderController = Get.find();
+  // OrderController orderController = Get.find();
+  OrderController orderController = Get.put(OrderController());
 
   @override
   Widget build(BuildContext context) {

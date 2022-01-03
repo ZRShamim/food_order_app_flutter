@@ -1,7 +1,6 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
-import 'package:e_commerce_app/controllers/offers_controller.dart';
-import 'package:e_commerce_app/controllers/order_controller.dart';
+// import 'package:e_commerce_app/controllers/offers_controller.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
 import 'package:e_commerce_app/view/screens/favorite_screen/favorite_screen.dart';
 import 'package:e_commerce_app/view/screens/history_screen/history_screen.dart';
@@ -13,8 +12,7 @@ import 'package:get/get.dart';
 class LandingScreen extends StatelessWidget {
   FoodController foodController = Get.put(FoodController());
   CartController cartController = Get.put(CartController());
-  OfferController offerController = Get.put(OfferController());
-  OrderController orderController = Get.put(OrderController());
+  // OfferController offerController = Get.put(OfferController());
 
   @override
   Widget build(BuildContext context) {

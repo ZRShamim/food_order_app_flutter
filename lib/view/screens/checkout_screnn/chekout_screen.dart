@@ -9,6 +9,7 @@ import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart';
 
 class CheckOutScreen extends StatelessWidget {
   OrderController orderController = Get.find();
@@ -224,6 +225,7 @@ class CheckOutScreen extends StatelessWidget {
                           for (var i = 0; i < foodIds.length; i++) {
                             foodController.toggleAddToCart(foodIds[i]);
                           }
+                          // Get.delete<CartController>();
                           Get.offAll(() => LandingScreen());
                         },
                         onCancel: () {},
