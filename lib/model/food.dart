@@ -51,6 +51,7 @@ class FoodList {
     required this.description,
     required this.rating,
     this.isFav = false,
+    this.isAddedToCart = false,
   });
 
   String foodId;
@@ -64,6 +65,7 @@ class FoodList {
   String description;
   double rating;
   bool isFav;
+  bool isAddedToCart;
 
   factory FoodList.fromJson(Map<String, dynamic> json) => FoodList(
         foodId: json["food_id"],

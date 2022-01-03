@@ -34,6 +34,14 @@ class FoodController extends GetxController {
     return foodList.where((food) => food.isFav == true).toList();
   }
 
+  void toggleAddToCart(String foodId) {
+    foodList.firstWhere((element) => element.foodId == foodId).isAddedToCart =
+        !foodList
+            .firstWhere((element) => element.foodId == foodId)
+            .isAddedToCart;
+    update();
+  }
+
   void toggleFavFood(FoodList food) {
     food.isFav = !food.isFav;
     update();

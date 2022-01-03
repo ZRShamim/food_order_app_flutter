@@ -18,7 +18,7 @@ class CartController extends GetxController {
             image: image,
             name: name,
             price: price,
-            quantity: 1);
+            quantity: 1,);
       });
     }
   }

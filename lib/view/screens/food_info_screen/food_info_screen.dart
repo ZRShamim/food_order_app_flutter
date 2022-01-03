@@ -133,29 +133,50 @@ class FoodInfo extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Center(
-                child: InkWell(
-                  onTap: () {
-                    cartController.addToCart(
-                        food.foodId, food.name, food.price, food.image);
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50),
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 250,
-                      height: 60,
-                      color: red,
-                      child: Text(
-                        'Add to cart',
-                        style: TextStyle(
-                          color: white,
-                          fontSize: 17,
+              GetBuilder<FoodController>(
+                init: FoodController(),
+                builder: (_) {
+                  return Center(
+                    child:food.isAddedToCart? ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 250,
+                          height: 60,
+                          color: black,
+                          child: Text(
+                            'Added',
+                            style: TextStyle(
+                              color: white,
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
+                      ) : InkWell(
+                      onTap: () {
+                        cartController.addToCart(
+                            food.foodId, food.name, food.price, food.image);
+                        foodController.toggleAddToCart(food.foodId);
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 250,
+                          height: 60,
+                          color: red,
+                          child: Text(
+                            'Add to cart',
+                            style: TextStyle(
+                              color: white,
+                              fontSize: 17,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ),
+                  );
+                },
               )
             ],
           ),

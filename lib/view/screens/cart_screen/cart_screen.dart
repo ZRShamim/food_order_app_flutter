@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
-import 'package:e_commerce_app/model/cart.dart';
 import 'package:e_commerce_app/view/screens/cart_screen/cart_widgets/cart_tile.dart';
 import 'package:e_commerce_app/view/screens/checkout_screnn/chekout_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
@@ -69,19 +68,10 @@ class CartScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 5, bottom: 10),
                         child: InkWell(
                           onTap: () {
-                            if (cartController.cartItems.isNotEmpty) {
-                              Get.to(() => CheckOutScreen(), arguments: {
-                                "totalAmount": cartController.totalAmount,
-                                "orderedItem": cartController.cartItems,
-                              });
-                            } else {
-                              Get.defaultDialog(
-                                title: 'Empty Cart',
-                                middleText:
-                                    'PLease add some food in cart then proceed',
-                                textCancel: 'Ok',
-                              );
-                            }
+                            Get.to(() => CheckOutScreen(), arguments: {
+                              "totalAmount": cartController.totalAmount,
+                              "orderedItem": cartController.cartItems,
+                            });
                           },
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(50),

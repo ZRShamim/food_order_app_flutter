@@ -2,7 +2,6 @@ import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/controllers/offers_controller.dart';
 import 'package:e_commerce_app/controllers/order_controller.dart';
-import 'package:e_commerce_app/controllers/util_controller.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
 import 'package:e_commerce_app/view/screens/favorite_screen/favorite_screen.dart';
 import 'package:e_commerce_app/view/screens/history_screen/history_screen.dart';

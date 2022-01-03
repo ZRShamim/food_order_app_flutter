@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
+import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/controllers/order_controller.dart';
 import 'package:e_commerce_app/model/cart.dart';
 import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
@@ -12,6 +13,7 @@ import 'package:get/get.dart';
 class CheckOutScreen extends StatelessWidget {
   OrderController orderController = Get.find();
   CartController cartController = Get.find();
+  FoodController foodController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,8 @@ class CheckOutScreen extends StatelessWidget {
     void changeRadioButtonDeliveryValue(var value) {
       activeRadioButtonDelivery.value = value;
     }
+
+    var foodIds = cartController.cartItems.keys.toList();
 
     double totalAmount = Get.arguments['totalAmount'];
     Map<String, Cart> orderedItem = Get.arguments['orderedItem'];
@@ -217,6 +221,9 @@ class CheckOutScreen extends StatelessWidget {
                           orderController.addOrders(
                               orderedItem.values.toList(), totalAmount);
                           cartController.clearCart();
+                          for (var i = 0; i < foodIds.length; i++) {
+                            foodController.toggleAddToCart(foodIds[i]);
+                          }
                           Get.offAll(() => LandingScreen());
                         },
                         onCancel: () {},
