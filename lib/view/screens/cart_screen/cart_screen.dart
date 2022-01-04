@@ -2,6 +2,7 @@ import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/view/screens/cart_screen/cart_widgets/cart_tile.dart';
 import 'package:e_commerce_app/view/screens/checkout_screnn/chekout_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,9 +19,7 @@ class CartScreen extends StatelessWidget {
           centerTitle: true,
           title: Text(
             'Cart',
-            style: TextStyle(
-              color: black,
-            ),
+            style: appbarTitleStyle,
           ),
         ),
         body: Obx(

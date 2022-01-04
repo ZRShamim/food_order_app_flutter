@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/controllers/offers_controller.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class OfferScreen extends StatelessWidget {
@@ -19,10 +20,10 @@ class OfferScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'My offers',
               style: TextStyle(
-                fontSize: 34,
+                fontSize: 34.sp,
               ),
             ),
             offerController.offerList.isNotEmpty ? SizedBox(

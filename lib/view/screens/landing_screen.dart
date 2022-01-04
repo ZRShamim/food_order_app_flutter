@@ -12,11 +12,11 @@ import 'package:get/get.dart';
 class LandingScreen extends StatelessWidget {
   FoodController foodController = Get.put(FoodController());
   CartController cartController = Get.put(CartController());
-  // OfferController offerController = Get.put(OfferController());
 
   @override
   Widget build(BuildContext context) {
-    var bottomTabbarIndex = 0.obs;
+    
+    var bottomTabbarIndex = 2.obs;
 
     void changeTabIndex(int index) {
       bottomTabbarIndex.value = index;

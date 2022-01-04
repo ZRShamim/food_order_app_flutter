@@ -2,12 +2,13 @@ import 'dart:math';
 import 'package:e_commerce_app/controllers/order_controller.dart';
 import 'package:e_commerce_app/model/order.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class HistoryScreen extends StatelessWidget {
-  // OrderController orderController = Get.find();
   OrderController orderController = Get.put(OrderController());
 
   @override
@@ -20,7 +21,7 @@ class HistoryScreen extends StatelessWidget {
           centerTitle: true,
           title: Text(
             'History',
-            style: TextStyle(color: black),
+            style: appbarTitleStyle,
           ),
         ),
         body: orderController.orderFoodList.isEmpty
@@ -33,9 +34,9 @@ class HistoryScreen extends StatelessWidget {
                       size: 200,
                       color: grey,
                     ),
-                    const Text(
+                    Text(
                       'No history yet',
-                      style: TextStyle(fontSize: 28),
+                      style: TextStyle(fontSize: 28.sp),
                     ),
                   ],
                 ),

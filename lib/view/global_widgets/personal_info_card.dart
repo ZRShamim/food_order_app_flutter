@@ -1,24 +1,26 @@
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PersonalInfoCard extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(30),
       child: Container(
         height: 180,
-        width: double.infinity,
         color: white,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 150,
-              width: 150,
-              child: Image.network(
-                  'https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png'),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(100),
+              child: SizedBox(
+                width: 150,
+                child: 
+                Image.network(
+                    'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png'),
+              ),
             ),
             const SizedBox(
               width: 20,
@@ -29,34 +31,46 @@ class PersonalInfoCard extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
-                  'Thelma Sara-bear',
-                  style: TextStyle(
-                    fontSize: 18,
+                SizedBox(
+                  width: 150.w,
+                  child: Text(
+                    'Md. Ziuar Rahman Shamim',
+                    style: TextStyle(
+                      fontSize: 18.sp,
+                    ),
                   ),
                 ),
-                const Text(
-                  'thelma_sara-bear@gmail.com',
-                  style: TextStyle(
-                    fontSize: 13,
-                  ),
-                ),
-                Divider(
-                  color: grey,
-                ),
-                const Text(
-                  '+233 54138989',
-                  style: TextStyle(
-                    fontSize: 15,
+                SizedBox(
+                  width: 150.w,
+                  child: Text(
+                    'thelma_sara-bear@gmail.com',
+                    style: TextStyle(
+                      fontSize: 13.sp,
+                    ),
                   ),
                 ),
                 Divider(
                   color: grey,
                 ),
-                const Text(
-                  'Trasaco hotel, behind navrongo campus',
-                  style: TextStyle(
-                    fontSize: 13,
+                SizedBox(
+                  width: 150.w,
+                  child: Text(
+                    '+233 54138989',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: grey,
+                ),
+                SizedBox(
+                  width: 150.w,
+                  child: Text(
+                    'Trasaco hotel, behind navrongo campus',
+                    style: TextStyle(
+                      fontSize: 13.sp,
+                    ),
                   ),
                 ),
               ],

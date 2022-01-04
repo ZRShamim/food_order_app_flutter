@@ -2,63 +2,61 @@ import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/model/food.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 
 class FoodCard extends StatelessWidget {
   FoodController foodController = Get.find();
   FoodCard({required this.food});
 
-  // final int index;
   final FoodList food;
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(40),
-      child: Stack(
-        alignment: AlignmentDirectional.topCenter,
-        children: [
-          Positioned(
-            top: 50,
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
+      children: [
+        Positioned(
+          top: 40,
+          child: Container(
+            color: white,
             width: 300,
-            height: 250,
-            child: Container(
-              color: white,
-            ),
+            height: 500,//work_to_do: at certain point it will not increase or decrease
           ),
-          Positioned(
-            child: SizedBox(
-              height: 125,
-              width: 125,
+        ),
+        Column(
+          children: [
+            SizedBox(
+              width: 100.w,//work_to_do: at certain point it will not increase or decrease
+              height: 100.w,//work_to_do: at certain point it will not increase or decrease
               child: CircleAvatar(
                 backgroundImage: NetworkImage(
                   food.image,
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 160,
-            child: SizedBox(
-              width: 150,
+            const SizedBox(height: 20,),
+            SizedBox(
+              width: 120,
+              height: 70,
               child: Text(
                 food.name,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 22,
+                style: TextStyle(
+                  fontSize:  20.sp,
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 220,
-            child: Text(
+            Text(
               'tk ${food.price}',
-              style: TextStyle(fontSize: 17, color: red),
-            ),
-          ),
-        ],
-      ),
+              style: TextStyle(fontSize: 17.sp, color: red),
+            )
+          ],
+        )
+      ],
     );
   }
 }

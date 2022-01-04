@@ -3,8 +3,10 @@ import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/offer%20screen/offer_screen.dart';
 import 'package:e_commerce_app/view/screens/payment_screen/payment_method_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class AccountScreen extends StatelessWidget {
@@ -14,16 +16,14 @@ class AccountScreen extends StatelessWidget {
       backgroundColor: bgColor,
       appBar: CustomAppbar(),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+        padding: const EdgeInsets.only(left: 10, top: 20, right: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'My Profile',
-                style: TextStyle(
-                  fontSize: 34,
-                ),
+                style: mainTitleStyle,
               ),
               const SizedBox(
                 height: 20,
@@ -31,10 +31,10 @@ class AccountScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Personal details',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 17.sp,
                     ),
                   ),
                   TextButton(
@@ -42,7 +42,7 @@ class AccountScreen extends StatelessWidget {
                       'Change',
                       style: TextStyle(
                         color: red,
-                        fontSize: 15,
+                        fontSize: 15.sp,
                       ),
                     ),
                     onPressed: () {},
@@ -54,16 +54,16 @@ class AccountScreen extends StatelessWidget {
                 height: 20,
               ),
               ListTile(
-                title: const Text(
+                title: Text(
                   'Offers',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                   ),
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: black,
-                  size: 18,
+                  size: 18.sp,
                 ),
                 onTap: () {
                   Get.to(() => OfferScreen());
@@ -77,16 +77,16 @@ class AccountScreen extends StatelessWidget {
                 height: 20,
               ),
               ListTile(
-                title: const Text(
+                title: Text(
                   'Payment Method',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                   ),
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: black,
-                  size: 18,
+                  size: 18.sp,
                 ),
                 onTap: () {
                   Get.to(() => PaymentMethodScreen());
@@ -100,10 +100,10 @@ class AccountScreen extends StatelessWidget {
                 height: 20,
               ),
               ListTile(
-                title: const Text(
+                title: Text(
                   'FAQ',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                   ),
                 ),
                 trailing: Icon(
@@ -120,10 +120,10 @@ class AccountScreen extends StatelessWidget {
                 height: 20,
               ),
               ListTile(
-                title: const Text(
+                title: Text(
                   'Help',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                   ),
                 ),
                 trailing: Icon(

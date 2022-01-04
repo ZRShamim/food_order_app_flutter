@@ -7,9 +7,9 @@ import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
 import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart';
 
 class CheckOutScreen extends StatelessWidget {
   OrderController orderController = Get.find();
@@ -37,9 +37,7 @@ class CheckOutScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Checkout',
-          style: TextStyle(
-            color: black,
-          ),
+          style: appbarTitleStyle,
         ),
       ),
       body: Padding(

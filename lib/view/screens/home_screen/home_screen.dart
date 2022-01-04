@@ -4,113 +4,40 @@ import 'package:e_commerce_app/view/global_widgets/custom_drawer.dart';
 import 'package:e_commerce_app/view/global_widgets/grid_layout.dart';
 import 'package:e_commerce_app/view/global_widgets/shimmer_tile.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   FoodController foodController = Get.find();
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size);
     return Scaffold(
       backgroundColor: bgColor,
       appBar: CustomAppbar(),
       drawer: CustomDrawer(),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Delecious \nFood For You',
-              style: TextStyle(
-                fontSize: 34,
-              ),
+              style: mainTitleStyle,
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15, right: 40),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Container(
-                  height: 60,
-                  color: lightGrey,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10, top: 5, bottom: 5),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.search_outlined),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: TextField(
-                              cursorColor: black,
-                              textInputAction: TextInputAction.search,
-                              keyboardType: TextInputType.text,
-                              onEditingComplete: () {},
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Search',
-                                hintStyle: TextStyle(fontSize: 18),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            const SearchBox(),
             const SizedBox(
-              height: 30,
+              height: 15,
             ),
-            Row(
-              children: [
-                Obx(
-                  () => IconButton(
-                    onPressed: foodController.fetchFoodList,
-                    icon: foodController.loading.value
-                        ? SizedBox(
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2.5,
-                              color: red,
-                            ),
-                          )
-                        : Icon(
-                            Icons.refresh,
-                            color: red,
-                          ),
-                  ),
-                ),
-                Expanded(
-                  child: SizedBox(
-                    height: 20,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 30),
-                      child: Obx(
-                        () => ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: foodController.categoryList.length,
-                          itemBuilder: (_, i) {
-                            return Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Text(
-                                foodController.categoryList[i],
-                                style: TextStyle(color: red, fontSize: 18),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+            CategorySlider(foodController: foodController),
+            const SizedBox(
+              height: 10,
             ),
             Obx(
               () => foodController.loading.value
@@ -124,6 +51,107 @@ class HomeScreen extends StatelessWidget {
                     ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CategorySlider extends StatelessWidget {
+  const CategorySlider({
+    Key? key,
+    required this.foodController,
+  }) : super(key: key);
+
+  final FoodController foodController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Obx(
+          () => IconButton(
+            onPressed: foodController.fetchFoodList,
+            icon: foodController.loading.value
+                ? SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2.5,
+                      color: red,
+                    ),
+                  )
+                : Icon(
+                    Icons.refresh,
+                    color: red,
+                  ),
+          ),
+        ),
+        Expanded(
+          child: SizedBox(
+            height: 20,
+            child: Obx(
+              () => ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: foodController.categoryList.length,
+                itemBuilder: (_, i) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      foodController.categoryList[i],
+                      style: TextStyle(color: red, fontSize: 19.sp),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class SearchBox extends StatelessWidget {
+  const SearchBox({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(50),
+      child: Container(
+        height: 45,
+        color: lightGrey,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.search_outlined,
+                size: 22,
+                color: grey,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TextField(
+                    cursorColor: black,
+                    textInputAction: TextInputAction.search,
+                    keyboardType: TextInputType.text,
+                    onEditingComplete: () {},
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Search',
+                      hintStyle: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

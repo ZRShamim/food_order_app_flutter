@@ -1,10 +1,10 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/view/global_widgets/custom_appbar.dart';
 import 'package:e_commerce_app/view/global_widgets/grid_layout.dart';
-import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
-import 'package:e_commerce_app/view/global_widgets/food_card.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class FavoriteScreen extends StatelessWidget {
@@ -20,11 +20,9 @@ class FavoriteScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Your \nFavorite Dishes',
-              style: TextStyle(
-                fontSize: 34,
-              ),
+              style: mainTitleStyle,
             ),
             const SizedBox(
               height: 30,
@@ -34,11 +32,11 @@ class FavoriteScreen extends StatelessWidget {
                   ? Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text(
                             'ohh snap!  No Favorites Yet',
                             style: TextStyle(
-                              fontSize: 28,
+                              fontSize: 28.sp,
                             ),
                           ),
                         ],
