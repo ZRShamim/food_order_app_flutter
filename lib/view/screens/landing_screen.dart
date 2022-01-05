@@ -15,8 +15,8 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    var bottomTabbarIndex = 2.obs;
+    print(MediaQuery.of(context).size);
+    var bottomTabbarIndex = 0.obs;
 
     void changeTabIndex(int index) {
       bottomTabbarIndex.value = index;

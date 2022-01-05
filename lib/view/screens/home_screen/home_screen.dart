@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size);
     return Scaffold(
       backgroundColor: bgColor,
       appBar: CustomAppbar(),
@@ -29,11 +28,11 @@ class HomeScreen extends StatelessWidget {
               style: mainTitleStyle,
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             const SearchBox(),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             CategorySlider(foodController: foodController),
             const SizedBox(

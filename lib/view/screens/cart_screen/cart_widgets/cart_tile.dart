@@ -2,12 +2,12 @@ import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/model/cart.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CartTile extends StatelessWidget {
-
   CartController cartController = Get.find();
-  
+
   CartTile({
     required this.cartItem,
     required this.keys,
@@ -18,49 +18,57 @@ class CartTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isMobileSizeMedium = ScreenUtil().screenWidth < 380;
     return Padding(
       padding: const EdgeInsets.only(top: 25),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(40),
         child: Container(
-          height: 110,
+          height: 80,
           color: white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(
-                height: 80,
-                width: 80,
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    cartItem.image,
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: SizedBox(
+                  height: isMobileSizeMedium ? 60.sp : 80,
+                  width: isMobileSizeMedium ? 60.sp : 80,
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      cartItem.image,
+                    ),
                   ),
                 ),
               ),
+            
               SizedBox(
-                width: 150,
+                width: ScreenUtil().screenWidth * .25,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       cartItem.name,
-                      style: const TextStyle(fontSize: 17),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: TextStyle(fontSize: 17.sp),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
                       'tk ${cartItem.price}',
-                      style: TextStyle(fontSize: 15, color: red),
+                      style: TextStyle(fontSize: 15.sp, color: red),
                     ),
                   ],
                 ),
               ),
+              
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  width: 105,
+                  width: 90,
                   height: 30,
                   color: red,
                   child: Row(
@@ -74,22 +82,22 @@ class CartTile extends StatelessWidget {
                             cartItem.quantity = 1;
                           }
                         },
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.remove,
-                          size: 13,
+                          size: 13.sm,
                         ),
                       ),
                       Text(
                         '${cartItem.quantity}',
-                        style: const TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 16.sp),
                       ),
                       IconButton(
                         onPressed: () {
                           cartController.addQuantity(keys);
                         },
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.add,
-                          size: 13,
+                          size: 13.sm,
                         ),
                       ),
                     ],

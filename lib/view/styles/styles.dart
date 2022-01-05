@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 TextStyle mainTitleStyle = TextStyle(
-  fontSize: 36.sp,
+  fontSize: 28.sp,
 );
 
 TextStyle appbarTitleStyle = TextStyle(

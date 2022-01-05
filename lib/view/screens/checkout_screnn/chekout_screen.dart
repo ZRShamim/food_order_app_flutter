@@ -9,6 +9,7 @@ import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CheckOutScreen extends StatelessWidget {
@@ -41,7 +42,7 @@ class CheckOutScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 10, left: 20, right: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -176,7 +177,7 @@ class CheckOutScreen extends StatelessWidget {
                   ),
                   Text(
                     'tk $totalAmount',
-                    style: const TextStyle(fontSize: 26),
+                    style: TextStyle(fontSize: 25.sm),
                   ),
                 ],
               ),

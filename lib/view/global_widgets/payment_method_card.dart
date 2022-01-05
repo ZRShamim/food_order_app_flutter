@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class PaymentMethodCard extends StatelessWidget {
@@ -46,10 +47,10 @@ class PaymentMethodCard extends StatelessWidget {
                     const SizedBox(
                       width: 15,
                     ),
-                    const Text(
+                    Text(
                       'Card',
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 17.sp,
                       ),
                     ),
                   ],
@@ -82,10 +83,13 @@ class PaymentMethodCard extends StatelessWidget {
                     const SizedBox(
                       width: 15,
                     ),
-                    const Text(
-                      'Mobile Banking (Bkash, Nagad, ...)',
-                      style: TextStyle(
-                        fontSize: 17,
+                    SizedBox(
+                      width: ScreenUtil().screenWidth * .45,
+                      child: Text(
+                        'Mobile Banking (Bkash, Nagad, Ucash)',
+                        style: TextStyle(
+                          fontSize: 17.sp,
+                        ),
                       ),
                     ),
                   ],
@@ -118,10 +122,10 @@ class PaymentMethodCard extends StatelessWidget {
                     const SizedBox(
                       width: 15,
                     ),
-                    const Text(
+                    Text(
                       'Pay on delivery',
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 17.sp,
                       ),
                     ),
                   ],

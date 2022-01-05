@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class AccountScreen extends StatelessWidget {
       backgroundColor: bgColor,
       appBar: CustomAppbar(),
       body: Padding(
-        padding: const EdgeInsets.only(left: 10, top: 20, right: 10),
+        padding: const EdgeInsets.only(left: 10, right: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,92 +52,70 @@ class AccountScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              ListTile(
-                title: Text(
-                  'Offers',
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
-                  color: black,
-                  size: 18.sp,
-                ),
-                onTap: () {
-                  Get.to(() => OfferScreen());
-                },
-                tileColor: white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
+              AccountTabListTile(
+                  title: 'Offers',
+                  routeFunction: () {
+                    Get.to(() => OfferScreen());
+                  }),
               const SizedBox(
                 height: 20,
               ),
-              ListTile(
-                title: Text(
-                  'Payment Method',
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
-                  color: black,
-                  size: 18.sp,
-                ),
-                onTap: () {
+              AccountTabListTile(
+                title: 'Payment Method',
+                routeFunction: () {
                   Get.to(() => PaymentMethodScreen());
                 },
-                tileColor: white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              ListTile(
-                title: Text(
-                  'FAQ',
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
-                  color: black,
-                  size: 18,
-                ),
-                tileColor: white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
+              AccountTabListTile(
+                title: 'FAQ',
+                routeFunction: () {},
               ),
               const SizedBox(
                 height: 20,
               ),
-              ListTile(
-                title: Text(
-                  'Help',
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
-                  color: black,
-                  size: 18,
-                ),
-                tileColor: white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: AccountTabListTile(
+                  title: 'Help',
+                  routeFunction: () {},
                 ),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AccountTabListTile extends StatelessWidget {
+  AccountTabListTile({
+    required this.title,
+    required this.routeFunction,
+  });
+  String title;
+  var routeFunction;
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontSize: 18.sp,
+        ),
+      ),
+      trailing: Icon(
+        Icons.arrow_forward_ios,
+        color: black,
+        size: 18.sp,
+      ),
+      onTap: routeFunction,
+      tileColor: white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
       ),
     );
   }

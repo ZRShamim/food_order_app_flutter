@@ -5,6 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PersonalInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
+    var isMobileSizeLarge = ScreenUtil().screenWidth > 400;
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(30),
       child: Container(
@@ -16,14 +19,13 @@ class PersonalInfoCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(100),
               child: SizedBox(
-                width: 150,
-                child: 
-                Image.network(
+                width:isMobileSizeLarge? 150 : 120,
+                child: Image.network(
                     'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png'),
               ),
             ),
             const SizedBox(
-              width: 20,
+              width: 10,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +34,7 @@ class PersonalInfoCard extends StatelessWidget {
                   height: 30,
                 ),
                 SizedBox(
-                  width: 150.w,
+                  width: ScreenUtil().screenWidth * .5,
                   child: Text(
                     'Md. Ziuar Rahman Shamim',
                     style: TextStyle(
@@ -41,7 +43,7 @@ class PersonalInfoCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 150.w,
+                  width: ScreenUtil().screenWidth * .5,
                   child: Text(
                     'thelma_sara-bear@gmail.com',
                     style: TextStyle(
@@ -53,7 +55,7 @@ class PersonalInfoCard extends StatelessWidget {
                   color: grey,
                 ),
                 SizedBox(
-                  width: 150.w,
+                  width: ScreenUtil().screenWidth * .5,
                   child: Text(
                     '+233 54138989',
                     style: TextStyle(
@@ -65,7 +67,7 @@ class PersonalInfoCard extends StatelessWidget {
                   color: grey,
                 ),
                 SizedBox(
-                  width: 150.w,
+                  width: ScreenUtil().screenWidth * .5,
                   child: Text(
                     'Trasaco hotel, behind navrongo campus',
                     style: TextStyle(

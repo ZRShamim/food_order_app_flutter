@@ -1,7 +1,9 @@
 import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
 import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
 
@@ -16,17 +18,17 @@ class PaymentMethodScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'My Profile',
-          style: TextStyle(color: black),
+          style: appbarTitleStyle,
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+        padding: const EdgeInsets.only(left: 10, top: 20, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Information',
-              style: TextStyle(fontSize: 17),
+              style: TextStyle(fontSize: 17.sp),
             ),
             const SizedBox(
               height: 20,
@@ -38,16 +40,16 @@ class PaymentMethodScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   'Payment Method',
-                  style: TextStyle(fontSize: 17),
+                  style: TextStyle(fontSize: 17.sp),
                 ),
                 TextButton(
                     child: Text(
                       'Update information',
                       style: TextStyle(
                         color: red,
-                        fontSize: 15,
+                        fontSize: 15.sp,
                       ),
                     ),
                     onPressed: () {},
