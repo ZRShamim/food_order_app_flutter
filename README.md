@@ -1,6 +1,35 @@
 # food_order_app
 
-A new Flutter project.
+A Food ordering app
+
+## Code Flow:
+For managing state I am using Getx. All the screens are in view folder..
+
+```
+└── lib/
+    ├── Controllers/
+    ├── Models/
+    ├── Services/
+    └── View/
+        └── global_widgets/
+        └── screens/
+        |   └── widgets/
+        └── styles/
+```
+
+## Api and others: 
+```
+https://raw.githubusercontent.com/ZRShamim/food_order_app_flutter/main/lib/model/food.json
+```
+
+##Packages
+```
+get: ^4.6.1
+http: ^0.13.4
+shimmer: ^2.0.0
+intl: ^0.17.0
+flutter_screenutil: ^5.0.2
+```
 
 ## Getting Started
 
