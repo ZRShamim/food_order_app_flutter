@@ -3,10 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 TextStyle mainTitleStyle = TextStyle(
-  fontSize: 28.sp,
+  fontSize: isTabletSize? 32 : 28.sp,
 );
 
 TextStyle appbarTitleStyle = TextStyle(
-  fontSize: 20.sp,
+  fontSize: isTabletSize? 24 : 20.sp,
   color: black,
 );
+
+var isTabletSize = ScreenUtil().screenWidth > 700;

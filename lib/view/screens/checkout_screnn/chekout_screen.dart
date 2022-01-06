@@ -171,9 +171,9 @@ class CheckOutScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Total',
-                    style: TextStyle(fontSize: 24),
+                    style: TextStyle(fontSize: 24.sm),
                   ),
                   Text(
                     'tk $totalAmount',

@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/model/food.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -28,8 +29,8 @@ class FoodCard extends StatelessWidget {
         Column(
           children: [
             SizedBox(
-              width: 100.w,//work_to_do: at certain point it will not increase or decrease
-              height: 100.w,//work_to_do: at certain point it will not increase or decrease
+              width: isTabletSize? 120 : 100.w,//work_to_do: at certain point it will not increase or decrease
+              height: isTabletSize? 120 : 100.w,//work_to_do: at certain point it will not increase or decrease
               child: CircleAvatar(
                 backgroundImage: NetworkImage(
                   food.image,
@@ -46,13 +47,13 @@ class FoodCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize:  20.sp,
+                  fontSize: isTabletSize? 22 : 20.sp,
                 ),
               ),
             ),
             Text(
               'tk ${food.price}',
-              style: TextStyle(fontSize: 17.sp, color: red),
+              style: TextStyle(fontSize: isTabletSize? 20 : 17.sp, color: red),
             )
           ],
         )

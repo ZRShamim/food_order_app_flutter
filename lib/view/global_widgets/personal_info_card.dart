@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -38,7 +39,7 @@ class PersonalInfoCard extends StatelessWidget {
                   child: Text(
                     'Md. Ziuar Rahman Shamim',
                     style: TextStyle(
-                      fontSize: 18.sp,
+                      fontSize: isTabletSize? 22 : 18.sp,
                     ),
                   ),
                 ),
@@ -47,7 +48,7 @@ class PersonalInfoCard extends StatelessWidget {
                   child: Text(
                     'thelma_sara-bear@gmail.com',
                     style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize:isTabletSize? 16 : 13.sp,
                     ),
                   ),
                 ),
@@ -59,7 +60,7 @@ class PersonalInfoCard extends StatelessWidget {
                   child: Text(
                     '+233 54138989',
                     style: TextStyle(
-                      fontSize: 15.sp,
+                      fontSize:isTabletSize? 17 : 15.sp,
                     ),
                   ),
                 ),
@@ -71,7 +72,7 @@ class PersonalInfoCard extends StatelessWidget {
                   child: Text(
                     'Trasaco hotel, behind navrongo campus',
                     style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize: isTabletSize? 16 : 13.sp,
                     ),
                   ),
                 ),

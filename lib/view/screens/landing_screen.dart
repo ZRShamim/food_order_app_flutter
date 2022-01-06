@@ -15,7 +15,6 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size);
     var bottomTabbarIndex = 0.obs;
 
     void changeTabIndex(int index) {
@@ -39,7 +38,7 @@ class LandingScreen extends StatelessWidget {
           elevation: 0,
           onTap: changeTabIndex,
           currentIndex: bottomTabbarIndex.value,
-          backgroundColor: white,
+          backgroundColor: bgColor,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: red,
           unselectedItemColor: grey,

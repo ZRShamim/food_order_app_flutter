@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/model/food.dart';
 import 'package:e_commerce_app/view/global_widgets/food_card.dart';
 import 'package:e_commerce_app/view/screens/food_info_screen/food_info_screen.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,7 @@ class GridLayout extends StatelessWidget {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: aspectRatio,
-          crossAxisCount: 2,
+          crossAxisCount:isTabletSize?3 : 2,
           crossAxisSpacing: 15,
           mainAxisSpacing: 10),
       itemCount: foodList.length,

@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(ScreenUtil().screenWidth);
     return Scaffold(
       backgroundColor: bgColor,
       appBar: CustomAppbar(),
@@ -88,7 +89,7 @@ class CategorySlider extends StatelessWidget {
         ),
         Expanded(
           child: SizedBox(
-            height: 20,
+            height: isTabletSize ? 22 : 20.sp,
             child: Obx(
               () => ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -98,7 +99,8 @@ class CategorySlider extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       foodController.categoryList[i],
-                      style: TextStyle(color: red, fontSize: 19.sp),
+                      style: TextStyle(
+                          color: red, fontSize: isTabletSize ? 22 : 19.sp),
                     ),
                   );
                 },

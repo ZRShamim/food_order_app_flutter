@@ -97,20 +97,20 @@ class AccountTabListTile extends StatelessWidget {
     required this.routeFunction,
   });
   String title;
-  var routeFunction;
+  Function() routeFunction;
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
         title,
         style: TextStyle(
-          fontSize: 18.sp,
+          fontSize: isTabletSize? 20 : 18.sp,
         ),
       ),
       trailing: Icon(
         Icons.arrow_forward_ios,
         color: black,
-        size: 18.sp,
+        size: isTabletSize? 18 : 18.sp,
       ),
       onTap: routeFunction,
       tileColor: white,

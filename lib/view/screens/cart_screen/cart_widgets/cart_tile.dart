@@ -43,7 +43,7 @@ class CartTile extends StatelessWidget {
               ),
             
               SizedBox(
-                width: ScreenUtil().screenWidth * .25,
+                width: ScreenUtil().screenWidth * .35,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,11 +68,11 @@ class CartTile extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  width: 90,
-                  height: 30,
+                  width: 150.sm,
+                  height: 35,
                   color: red,
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
                         onPressed: () {
@@ -84,12 +84,12 @@ class CartTile extends StatelessWidget {
                         },
                         icon: Icon(
                           Icons.remove,
-                          size: 13.sm,
+                          size: 15.sm,
                         ),
                       ),
                       Text(
                         '${cartItem.quantity}',
-                        style: TextStyle(fontSize: 16.sp),
+                        style: TextStyle(fontSize: 14.sm),
                       ),
                       IconButton(
                         onPressed: () {
@@ -97,7 +97,7 @@ class CartTile extends StatelessWidget {
                         },
                         icon: Icon(
                           Icons.add,
-                          size: 13.sm,
+                          size: 15.sm,
                         ),
                       ),
                     ],

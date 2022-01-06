@@ -44,7 +44,7 @@ class FoodInfo extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,13 +52,16 @@ class FoodInfo extends StatelessWidget {
               Center(
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 200,
-                      width: 200,
-                      child: CircleAvatar(
-                        backgroundColor: white,
-                        backgroundImage: NetworkImage(
-                          food.image,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: SizedBox(
+                        height: 180,
+                        width: 180,
+                        child: CircleAvatar(
+                          backgroundColor: white,
+                          backgroundImage: NetworkImage(
+                            food.image,
+                          ),
                         ),
                       ),
                     ),
@@ -158,18 +161,21 @@ class FoodInfo extends StatelessWidget {
                             food.foodId, food.name, food.price, food.image);
                         foodController.toggleAddToCart(food.foodId);
                       },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          alignment: Alignment.center,
-                          width: 250,
-                          height: 60,
-                          color: red,
-                          child: Text(
-                            'Add to cart',
-                            style: TextStyle(
-                              color: white,
-                              fontSize: 17,
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 250,
+                            height: 60,
+                            color: red,
+                            child: Text(
+                              'Add to cart',
+                              style: TextStyle(
+                                color: white,
+                                fontSize: 17,
+                              ),
                             ),
                           ),
                         ),
