@@ -52,7 +52,7 @@ class PersonalInfoCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Divider(
+                const Divider(
                   color: grey,
                 ),
                 SizedBox(
@@ -64,7 +64,7 @@ class PersonalInfoCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Divider(
+                const Divider(
                   color: grey,
                 ),
                 SizedBox(

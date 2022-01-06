@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
+import 'package:e_commerce_app/view/global_widgets/button_widget.dart';
 import 'package:e_commerce_app/view/screens/cart_screen/cart_widgets/cart_tile.dart';
 import 'package:e_commerce_app/view/screens/checkout_screnn/chekout_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
@@ -13,7 +14,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: black),
+        iconTheme: const IconThemeData(color: black),
         elevation: 0,
         backgroundColor: bgColor,
         centerTitle: true,
@@ -27,13 +28,13 @@ class CartScreen extends StatelessWidget {
             ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: const [
                     Icon(
                       Icons.shopping_cart_outlined,
                       size: 200,
                       color: grey,
                     ),
-                    const Text(
+                    Text(
                       'No order yet',
                       style: TextStyle(fontSize: 28),
                     ),
@@ -71,22 +72,7 @@ class CartScreen extends StatelessWidget {
                             "orderedItem": cartController.cartItems,
                           });
                         },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Container(
-                            alignment: Alignment.center,
-                            width: 250,
-                            height: 60,
-                            color: red,
-                            child: Text(
-                              'Complete Order',
-                              style: TextStyle(
-                                color: white,
-                                fontSize: 17,
-                              ),
-                            ),
-                          ),
-                        ),
+                        child: ButtonWidget(title: 'Complete Order'),
                       ),
                     ),
                   ],

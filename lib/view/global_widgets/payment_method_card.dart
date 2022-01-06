@@ -38,7 +38,7 @@ class PaymentMethodCard extends StatelessWidget {
                         width: 50,
                         height: 50,
                         color: red,
-                        child: Icon(
+                        child: const Icon(
                           Icons.credit_card_outlined,
                           color: white,
                         ),
@@ -74,7 +74,7 @@ class PaymentMethodCard extends StatelessWidget {
                         width: 50,
                         height: 50,
                         color: pink,
-                        child: Icon(
+                        child: const Icon(
                           Icons.account_balance_outlined,
                           color: white,
                         ),
@@ -113,7 +113,7 @@ class PaymentMethodCard extends StatelessWidget {
                         width: 50,
                         height: 50,
                         color: blue,
-                        child: Icon(
+                        child: const Icon(
                           Icons.attach_money_outlined,
                           color: white,
                         ),

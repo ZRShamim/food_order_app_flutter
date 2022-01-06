@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(ScreenUtil().screenWidth);
     return Scaffold(
       backgroundColor: bgColor,
       appBar: CustomAppbar(),
@@ -73,7 +72,7 @@ class CategorySlider extends StatelessWidget {
           () => IconButton(
             onPressed: foodController.fetchFoodList,
             icon: foodController.loading.value
-                ? SizedBox(
+                ? const SizedBox(
                     width: 18,
                     height: 18,
                     child: CircularProgressIndicator(
@@ -81,7 +80,7 @@ class CategorySlider extends StatelessWidget {
                       color: red,
                     ),
                   )
-                : Icon(
+                : const Icon(
                     Icons.refresh,
                     color: red,
                   ),
@@ -130,7 +129,7 @@ class SearchBox extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.search_outlined,
                 size: 22,
                 color: grey,

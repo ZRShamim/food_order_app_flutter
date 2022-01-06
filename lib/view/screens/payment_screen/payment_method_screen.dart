@@ -12,7 +12,7 @@ class PaymentMethodScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: black),
+        iconTheme:const IconThemeData(color: black),
         elevation: 0,
         backgroundColor: bgColor,
         centerTitle: true,

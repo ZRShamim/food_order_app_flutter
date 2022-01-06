@@ -22,7 +22,7 @@ class CustomDrawer extends StatelessWidget {
               icon: Icons.account_circle_outlined,
               routePAth: PaymentMethodScreen(),
             ),
-            Divider(
+            const Divider(
               color: white,
             ),
             DrawerTile(
@@ -30,7 +30,7 @@ class CustomDrawer extends StatelessWidget {
               icon: Icons.shopping_cart_outlined,
               routePAth: CartScreen(),
             ),
-            Divider(
+            const Divider(
               color: white,
             ),
             DrawerTile(
@@ -38,14 +38,14 @@ class CustomDrawer extends StatelessWidget {
               icon: Icons.local_offer_outlined,
               routePAth: OfferScreen(),
             ),
-            Divider(
+            const Divider(
               color: white,
             ),
             DrawerTile(
               title: 'Privacy policy',
               icon: Icons.description_outlined,
             ),
-            Divider(
+            const Divider(
               color: white,
             ),
             DrawerTile(
@@ -56,14 +56,14 @@ class CustomDrawer extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Row(
-                children: [
+                children: const [
                   Text('Sign-Out', 
                     style: TextStyle(
                       color: white,
                       fontSize: 20
                     ),
                   ),
-                  const SizedBox(width: 10,),
+                  SizedBox(width: 10,),
                   Icon(Icons.arrow_forward, color: white,),
                 ],
               ),
@@ -95,7 +95,7 @@ class DrawerTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: TextStyle(color: white, fontSize: 20),
+        style: const TextStyle(color: white, fontSize: 20),
       ),
       trailing: IconButton(
         onPressed: () {
@@ -103,7 +103,7 @@ class DrawerTile extends StatelessWidget {
             Get.to(routePAth);
           }
         },
-        icon: Icon(
+        icon: const Icon(
           Icons.arrow_forward_ios,
           color: white,
           size: 16,

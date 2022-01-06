@@ -29,7 +29,7 @@ class HistoryScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.event_note_outlined,
                       size: 200,
                       color: grey,

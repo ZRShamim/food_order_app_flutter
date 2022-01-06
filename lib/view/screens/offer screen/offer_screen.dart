@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/controllers/offers_controller.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
+import 'package:e_commerce_app/view/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -12,7 +13,7 @@ class OfferScreen extends StatelessWidget {
       backgroundColor: bgColor,
       appBar: AppBar(
         backgroundColor: bgColor,
-        iconTheme: IconThemeData(color: black),
+        iconTheme: const IconThemeData(color: black),
         elevation: 0,
       ),
       body: Padding(
@@ -22,21 +23,27 @@ class OfferScreen extends StatelessWidget {
           children: [
             Text(
               'My offers',
-              style: TextStyle(
-                fontSize: 34.sp,
-              ),
+              style: mainTitleStyle,
             ),
-            offerController.offerList.isNotEmpty ? SizedBox(
+            SizedBox(
               height: MediaQuery.of(context).size.height * .75,
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('ohh snap!  No offers yet', style: TextStyle(fontSize: 28,),),
-                  Text(' please check again.', style: TextStyle(fontSize: 17, color: grey),),
+                  Text(
+                    'ohh snap!  No offers yet',
+                    style: TextStyle(
+                      fontSize: 28.sm,
+                    ),
+                  ),
+                  Text(
+                    ' please check again.',
+                    style: TextStyle(fontSize: 17.sm, color: grey),
+                  ),
                 ],
               ),
-            ) : const Text('data') 
+            )
           ],
         ),
       ),

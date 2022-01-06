@@ -2,6 +2,7 @@ import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/controllers/order_controller.dart';
 import 'package:e_commerce_app/model/cart.dart';
+import 'package:e_commerce_app/view/global_widgets/button_widget.dart';
 import 'package:e_commerce_app/view/global_widgets/payment_method_card.dart';
 import 'package:e_commerce_app/view/global_widgets/personal_info_card.dart';
 import 'package:e_commerce_app/view/screens/account_screen/account_screen.dart';
@@ -32,7 +33,7 @@ class CheckOutScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: black),
+        iconTheme: const IconThemeData(color: black),
         elevation: 0,
         backgroundColor: bgColor,
         centerTitle: true,
@@ -55,7 +56,7 @@ class CheckOutScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 17),
                   ),
                   TextButton(
-                    child: Text(
+                    child: const Text(
                       'Change',
                       style: TextStyle(
                         color: red,
@@ -80,7 +81,7 @@ class CheckOutScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 17),
                   ),
                   TextButton(
-                    child: Text(
+                    child: const Text(
                       'Update information',
                       style: TextStyle(
                         color: red,
@@ -229,24 +230,11 @@ class CheckOutScreen extends StatelessWidget {
                         },
                         onCancel: () {},
                         textConfirm: 'Order Now',
+                        buttonColor: red,
+                        cancelTextColor: red,
                         confirmTextColor: black);
                   },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50),
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 250,
-                      height: 60,
-                      color: red,
-                      child: Text(
-                        'Check Out',
-                        style: TextStyle(
-                          color: white,
-                          fontSize: 17,
-                        ),
-                      ),
-                    ),
-                  ),
+                  child: ButtonWidget(title: 'Check Out',),
                 ),
               ),
             ],
@@ -256,3 +244,5 @@ class CheckOutScreen extends StatelessWidget {
     );
   }
 }
+
+

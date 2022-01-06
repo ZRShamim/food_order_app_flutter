@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/controllers/cart_controller.dart';
 import 'package:e_commerce_app/controllers/food_controller.dart';
 import 'package:e_commerce_app/model/food.dart';
+import 'package:e_commerce_app/view/global_widgets/button_widget.dart';
 import 'package:e_commerce_app/view/screens/landing_screen.dart';
 import 'package:e_commerce_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class FoodInfo extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: black),
+        iconTheme: const IconThemeData(color: black),
         elevation: 0,
         backgroundColor: bgColor,
         leading: IconButton(
@@ -37,6 +38,7 @@ class FoodInfo extends StatelessWidget {
                 },
                 icon: Icon(
                   food.isFav ? Icons.favorite : Icons.favorite_outline,
+                  color: red,
                 ),
               );
             },
@@ -86,7 +88,7 @@ class FoodInfo extends StatelessWidget {
                       child: Text(
                         'tk ${food.price}',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 22,
                           color: red,
                         ),
@@ -107,7 +109,7 @@ class FoodInfo extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 320,
                 child: Text(
                   'Delivered between monday aug and thursday 20 from 8pm to 09:32 pm',
@@ -126,7 +128,7 @@ class FoodInfo extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 320,
                 child: Text(
                   'All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.',
@@ -140,44 +142,19 @@ class FoodInfo extends StatelessWidget {
                 init: FoodController(),
                 builder: (_) {
                   return Center(
-                    child:food.isAddedToCart? ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          alignment: Alignment.center,
-                          width: 250,
-                          height: 60,
-                          color: black,
-                          child: Text(
-                            'Added',
-                            style: TextStyle(
-                              color: white,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                      ) : InkWell(
-                      onTap: () {
-                        cartController.addToCart(
-                            food.foodId, food.name, food.price, food.image);
-                        foodController.toggleAddToCart(food.foodId);
-                      },
+                    child: InkWell(
+                      onTap: food.isAddedToCart
+                          ? () {}
+                          : () {
+                              cartController.addToCart(food.foodId, food.name,
+                                  food.price, food.image);
+                              foodController.toggleAddToCart(food.foodId);
+                            },
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 10),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Container(
-                            alignment: Alignment.center,
-                            width: 250,
-                            height: 60,
-                            color: red,
-                            child: Text(
-                              'Add to cart',
-                              style: TextStyle(
-                                color: white,
-                                fontSize: 17,
-                              ),
-                            ),
-                          ),
+                        child: ButtonWidget(
+                          title: food.isAddedToCart ? 'Added' : 'Add to cart',
+                          buttonColor: food.isAddedToCart ? black : red,
                         ),
                       ),
                     ),
